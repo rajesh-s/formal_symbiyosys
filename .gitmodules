@@ -1,3 +1,6 @@
 [submodule "intro/getting_started"]
 	path = intro/getting_started
 	url = https://github.com/SymbioticEDA/getting-started-FV
+[submodule "formal-intro-course"]
+	path = formal-intro-course
+	url = https://github.com/mattvenn/formal-intro-course.git
