@@ -1,2 +1,2 @@
 # SymbiYosys & Formal Verification
-My experiments with SymbiYosys
+My experiments with SymbiYosys and Formal Verification
