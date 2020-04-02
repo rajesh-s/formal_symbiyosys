@@ -1,0 +1,95 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing ILANG frontend.
+Input filename: design.il
+
+2. Printing statistics.
+
+=== testbench ===
+
+   Number of wires:                 22
+   Number of wire bits:             75
+   Number of public wires:           8
+   Number of public wire bits:      47
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 19
+     $anyconst                       1
+     $anyseq                         2
+     $assert                         1
+     $dff                            4
+     $eq                             2
+     $mux                            8
+     memory                          1
+
+=== memory ===
+
+   Number of wires:                 44
+   Number of wire bits:            474
+   Number of public wires:           7
+   Number of public wire bits:      38
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     $anyseq                        11
+     $eq                             3
+     $logic_not                      1
+     $mem                            4
+     $mux                           19
+
+=== design hierarchy ===
+
+   testbench                         1
+     memory                          1
+
+   Number of wires:                 66
+   Number of wire bits:            549
+   Number of public wires:          15
+   Number of public wire bits:      85
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 56
+     $anyconst                       1
+     $anyseq                        13
+     $assert                         1
+     $dff                            4
+     $eq                             5
+     $logic_not                      1
+     $mem                            4
+     $mux                           27
+
+3. Executing SMT2 backend.
+Creating SMT-LIBv2 representation of module memory.
+Creating SMT-LIBv2 representation of module testbench.
+
+End of script. Logfile hash: d8707118a3
+CPU: user 0.01s system 0.00s, MEM: 44.52 MB total, 8.52 MB resident
+Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 58% 2x write_smt2 (0 sec), 38% 2x read_ilang (0 sec), ...

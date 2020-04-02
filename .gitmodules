@@ -1,0 +1,3 @@
+[submodule "intro/getting_started"]
+	path = intro/getting_started
+	url = https://github.com/SymbioticEDA/getting-started-FV

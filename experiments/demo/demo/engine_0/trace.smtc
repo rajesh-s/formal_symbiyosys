@@ -1,0 +1,106 @@
+initial
+assume (= [$formal$demo.sv:16$1_CHECK] false)
+assume (= [$formal$demo.sv:16$1_EN] false)
+assume (= [counter] #b000000)
+
+state 0
+assume (= [clk] false)
+
+state 1
+assume (= [clk] false)
+
+state 2
+assume (= [clk] false)
+
+state 3
+assume (= [clk] false)
+
+state 4
+assume (= [clk] false)
+
+state 5
+assume (= [clk] false)
+
+state 6
+assume (= [clk] false)
+
+state 7
+assume (= [clk] false)
+
+state 8
+assume (= [clk] false)
+
+state 9
+assume (= [clk] false)
+
+state 10
+assume (= [clk] false)
+
+state 11
+assume (= [clk] false)
+
+state 12
+assume (= [clk] false)
+
+state 13
+assume (= [clk] false)
+
+state 14
+assume (= [clk] false)
+
+state 15
+assume (= [clk] false)
+
+state 16
+assume (= [clk] false)
+
+state 17
+assume (= [clk] false)
+
+state 18
+assume (= [clk] false)
+
+state 19
+assume (= [clk] false)
+
+state 20
+assume (= [clk] false)
+
+state 21
+assume (= [clk] false)
+
+state 22
+assume (= [clk] false)
+
+state 23
+assume (= [clk] false)
+
+state 24
+assume (= [clk] false)
+
+state 25
+assume (= [clk] false)
+
+state 26
+assume (= [clk] false)
+
+state 27
+assume (= [clk] false)
+
+state 28
+assume (= [clk] false)
+
+state 29
+assume (= [clk] false)
+
+state 30
+assume (= [clk] false)
+
+state 31
+assume (= [clk] false)
+
+state 32
+assume (= [clk] false)
+
+state 33
+assume (= [clk] false)

@@ -1,0 +1,455 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: memory.sv
+Parsing formal SystemVerilog input from `memory.sv' to AST representation.
+Storing AST representation for module `$abstract\testbench'.
+Storing AST representation for module `$abstract\memory'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\testbench'.
+Generating RTLIL representation for module `\testbench'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \testbench
+
+2.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\memory'.
+Generating RTLIL representation for module `\memory'.
+
+2.2.3. Analyzing design hierarchy..
+Top module:  \testbench
+Used module:     \memory
+
+2.2.4. Analyzing design hierarchy..
+Top module:  \testbench
+Used module:     \memory
+Removing unused module `$abstract\memory'.
+Removing unused module `$abstract\testbench'.
+Removed 2 unused modules.
+Module testbench directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$memory.sv:46$16 in module memory.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 2 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\testbench.$proc$memory.sv:26$10'.
+  Set init value: $formal$memory.sv:26$1_EN = 1'0
+Found init rule in `\testbench.$proc$memory.sv:16$9'.
+  Set init value: \test_data_valid = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\memory.$proc$memory.sv:46$16'.
+     1/12: $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19
+     2/12: $0$memwr$\bank0$memory.sv:48$12_DATA[7:0]$18
+     3/12: $0$memwr$\bank0$memory.sv:48$12_ADDR[7:0]$17
+     4/12: $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22
+     5/12: $0$memwr$\bank1$memory.sv:49$13_DATA[7:0]$21
+     6/12: $0$memwr$\bank1$memory.sv:49$13_ADDR[7:0]$20
+     7/12: $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25
+     8/12: $0$memwr$\bank1$memory.sv:50$14_DATA[7:0]$24
+     9/12: $0$memwr$\bank1$memory.sv:50$14_ADDR[7:0]$23
+    10/12: $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28
+    11/12: $0$memwr$\bank3$memory.sv:51$15_DATA[7:0]$27
+    12/12: $0$memwr$\bank3$memory.sv:51$15_ADDR[7:0]$26
+Creating decoders for process `\testbench.$proc$memory.sv:26$10'.
+Creating decoders for process `\testbench.$proc$memory.sv:16$9'.
+Creating decoders for process `\testbench.$proc$memory.sv:19$3'.
+     1/4: $0$formal$memory.sv:26$1_EN[0:0]$5
+     2/4: $0$formal$memory.sv:26$1_CHECK[0:0]$4
+     3/4: $0\test_data[7:0]
+     4/4: $0\test_data_valid[0:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\memory.$memwr$\bank0$memory.sv:48$12_ADDR' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$131' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank0$memory.sv:48$12_DATA' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$132' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank0$memory.sv:48$12_EN' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$133' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank1$memory.sv:49$13_ADDR' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$134' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank1$memory.sv:49$13_DATA' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$135' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank1$memory.sv:49$13_EN' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$136' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank1$memory.sv:50$14_ADDR' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$137' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank1$memory.sv:50$14_DATA' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$138' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank1$memory.sv:50$14_EN' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$139' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank3$memory.sv:51$15_ADDR' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$140' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank3$memory.sv:51$15_DATA' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$141' with positive edge clock.
+Creating register for signal `\memory.$memwr$\bank3$memory.sv:51$15_EN' using process `\memory.$proc$memory.sv:46$16'.
+  created $dff cell `$procdff$142' with positive edge clock.
+Creating register for signal `\testbench.\test_data_valid' using process `\testbench.$proc$memory.sv:19$3'.
+  created $dff cell `$procdff$143' with positive edge clock.
+Creating register for signal `\testbench.\test_data' using process `\testbench.$proc$memory.sv:19$3'.
+  created $dff cell `$procdff$144' with positive edge clock.
+Creating register for signal `\testbench.$formal$memory.sv:26$1_CHECK' using process `\testbench.$proc$memory.sv:19$3'.
+  created $dff cell `$procdff$145' with positive edge clock.
+Creating register for signal `\testbench.$formal$memory.sv:26$1_EN' using process `\testbench.$proc$memory.sv:19$3'.
+  created $dff cell `$procdff$146' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `\memory.$proc$memory.sv:46$16'.
+Removing empty process `memory.$proc$memory.sv:46$16'.
+Removing empty process `testbench.$proc$memory.sv:26$10'.
+Removing empty process `testbench.$proc$memory.sv:16$9'.
+Found and cleaned up 3 empty switches in `\testbench.$proc$memory.sv:19$3'.
+Removing empty process `testbench.$proc$memory.sv:19$3'.
+Cleaned up 8 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module memory.
+<suppressed ~4 debug messages>
+Optimizing module testbench.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+Removed 0 unused cells and 43 unused wires.
+<suppressed ~6 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module memory..
+checking module testbench..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module memory.
+Optimizing module testbench.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\memory'.
+<suppressed ~36 debug messages>
+Finding identical cells in module `\testbench'.
+Removed a total of 12 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \testbench..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \memory.
+    Consolidated identical input bits for $mux cell $procmux$103:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$103_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$103_Y [0]
+      New connections: $procmux$103_Y [7:1] = { $procmux$103_Y [0] $procmux$103_Y [0] $procmux$103_Y [0] $procmux$103_Y [0] $procmux$103_Y [0] $procmux$103_Y [0] $procmux$103_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$52:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$52_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$52_Y [0]
+      New connections: $procmux$52_Y [7:1] = { $procmux$52_Y [0] $procmux$52_Y [0] $procmux$52_Y [0] $procmux$52_Y [0] $procmux$52_Y [0] $procmux$52_Y [0] $procmux$52_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$72:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$72_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$72_Y [0]
+      New connections: $procmux$72_Y [7:1] = { $procmux$72_Y [0] $procmux$72_Y [0] $procmux$72_Y [0] $procmux$72_Y [0] $procmux$72_Y [0] $procmux$72_Y [0] $procmux$72_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$89:
+      Old ports: A=8'00000000, B=8'11111111, Y=$procmux$89_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$89_Y [0]
+      New connections: $procmux$89_Y [7:1] = { $procmux$89_Y [0] $procmux$89_Y [0] $procmux$89_Y [0] $procmux$89_Y [0] $procmux$89_Y [0] $procmux$89_Y [0] $procmux$89_Y [0] }
+  Optimizing cells in module \memory.
+    Consolidated identical input bits for $mux cell $procmux$105:
+      Old ports: A=8'00000000, B=$procmux$103_Y, Y=$0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28
+      New ports: A=1'0, B=$procmux$103_Y [0], Y=$0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0]
+      New connections: $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [7:1] = { $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] $0$memwr$\bank3$memory.sv:51$15_EN[7:0]$28 [0] }
+    Consolidated identical input bits for $mux cell $procmux$54:
+      Old ports: A=8'00000000, B=$procmux$52_Y, Y=$0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19
+      New ports: A=1'0, B=$procmux$52_Y [0], Y=$0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0]
+      New connections: $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [7:1] = { $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] $0$memwr$\bank0$memory.sv:48$12_EN[7:0]$19 [0] }
+    Consolidated identical input bits for $mux cell $procmux$74:
+      Old ports: A=8'00000000, B=$procmux$72_Y, Y=$0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22
+      New ports: A=1'0, B=$procmux$72_Y [0], Y=$0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0]
+      New connections: $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [7:1] = { $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] $0$memwr$\bank1$memory.sv:49$13_EN[7:0]$22 [0] }
+    Consolidated identical input bits for $mux cell $procmux$91:
+      Old ports: A=8'00000000, B=$procmux$89_Y, Y=$0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25
+      New ports: A=1'0, B=$procmux$89_Y [0], Y=$0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0]
+      New connections: $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [7:1] = { $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] $0$memwr$\bank1$memory.sv:50$14_EN[7:0]$25 [0] }
+  Optimizing cells in module \memory.
+  Optimizing cells in module \testbench.
+Performed a total of 8 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\memory'.
+<suppressed ~27 debug messages>
+Finding identical cells in module `\testbench'.
+Removed a total of 9 cells.
+
+2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+Removed 0 unused cells and 21 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module memory.
+Optimizing module testbench.
+
+2.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \testbench..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+2.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \memory.
+  Optimizing cells in module \testbench.
+Performed a total of 0 changes.
+
+2.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\memory'.
+Finding identical cells in module `\testbench'.
+Removed a total of 0 cells.
+
+2.7.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+
+2.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module memory.
+Optimizing module testbench.
+
+2.7.16. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell memory.$eq$memory.sv:57$31 ($eq).
+Removed top 24 bits (of 32) from mux cell memory.$ternary$memory.sv:59$44 ($mux).
+Removed top 7 bits (of 8) from FF cell memory.$procdff$133 ($dff).
+Removed top 7 bits (of 8) from FF cell memory.$procdff$136 ($dff).
+Removed top 7 bits (of 8) from FF cell memory.$procdff$139 ($dff).
+Removed top 7 bits (of 8) from FF cell memory.$procdff$142 ($dff).
+Removed top 24 bits (of 32) from mux cell memory.$ternary$memory.sv:59$42 ($mux).
+Removed top 24 bits (of 32) from mux cell memory.$ternary$memory.sv:59$40 ($mux).
+Removed top 24 bits (of 32) from mux cell memory.$ternary$memory.sv:59$38 ($mux).
+Removed top 24 bits (of 32) from wire memory.$extend$memory.sv:59$37_Y.
+Removed top 24 bits (of 32) from wire memory.$extend$memory.sv:59$39_Y.
+Removed top 24 bits (of 32) from wire memory.$extend$memory.sv:59$41_Y.
+Removed top 24 bits (of 32) from wire memory.$extend$memory.sv:59$43_Y.
+Removed top 24 bits (of 32) from wire memory.$ternary$memory.sv:59$38_Y.
+Removed top 24 bits (of 32) from wire memory.$ternary$memory.sv:59$40_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\bank0$memory.sv:48$45' in module `\memory': merged $dff to cell.
+Checking cell `$memwr$\bank1$memory.sv:49$46' in module `\memory': merged $dff to cell.
+Checking cell `$memwr$\bank1$memory.sv:50$47' in module `\memory': merged $dff to cell.
+Checking cell `$memwr$\bank3$memory.sv:51$48' in module `\memory': merged $dff to cell.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+Removed 12 unused cells and 19 unused wires.
+<suppressed ~13 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\bank0' in module `\memory':
+  $memwr$\bank0$memory.sv:48$45 ($memwr)
+  $memrd$\bank0$memory.sv:56$30 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\bank1' in module `\memory':
+  $memwr$\bank1$memory.sv:49$46 ($memwr)
+  $memwr$\bank1$memory.sv:50$47 ($memwr)
+  $memrd$\bank1$memory.sv:57$32 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\bank2' in module `\memory':
+  $memrd$\bank2$memory.sv:58$34 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\bank3' in module `\memory':
+  $memwr$\bank3$memory.sv:51$48 ($memwr)
+  $memrd$\bank3$memory.sv:59$36 ($memrd)
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module memory.
+Optimizing module testbench.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\memory'.
+Finding identical cells in module `\testbench'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+
+2.12.5. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== memory ===
+
+   Number of wires:                 33
+   Number of wire bits:            386
+   Number of public wires:           7
+   Number of public wire bits:      38
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 27
+     $eq                             3
+     $logic_not                      1
+     $mem                            4
+     $mux                           19
+
+=== testbench ===
+
+   Number of wires:                 20
+   Number of wire bits:             73
+   Number of public wires:           8
+   Number of public wire bits:      47
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $anyconst                       1
+     $assert                         1
+     $dff                            4
+     $eq                             2
+     $mux                            8
+     memory                          1
+
+=== design hierarchy ===
+
+   testbench                         1
+     memory                          1
+
+   Number of wires:                 53
+   Number of wire bits:            459
+   Number of public wires:          15
+   Number of public wire bits:      85
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 43
+     $anyconst                       1
+     $assert                         1
+     $dff                            4
+     $eq                             5
+     $logic_not                      1
+     $mem                            4
+     $mux                           27
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module memory..
+checking module testbench..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module memory.
+Optimizing module testbench.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\memory'.
+Finding identical cells in module `\testbench'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \memory..
+Finding unused cells or wires in module \testbench..
+Removed 3 unused cells and 3 unused wires.
+<suppressed ~4 debug messages>
+
+7.5. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module memory..
+checking module testbench..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \testbench
+Used module:     \memory
+
+9.2. Analyzing design hierarchy..
+Top module:  \testbench
+Used module:     \memory
+Removed 0 unused modules.
+Module testbench directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 6fef93f1e1
+CPU: user 0.06s system 0.00s, MEM: 45.06 MB total, 10.03 MB resident
+Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 27% 7x opt_clean (0 sec), 17% 6x opt_expr (0 sec), ...

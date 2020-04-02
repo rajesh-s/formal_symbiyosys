@@ -1,0 +1,31 @@
+initial
+assume (= [$formal$memory.sv:26$1_CHECK] #b0)
+assume (= [$formal$memory.sv:26$1_EN] #b0)
+assume (= [test_data] #b11111111)
+assume (= [test_data_valid] #b0)
+assume (= (select [uut.bank0] #b10000000) #b00101001)
+assume (= (select [uut.bank0] #b00000000) #b00000000)
+assume (= (select [uut.bank1] #b10000000) #b00000000)
+assume (= (select [uut.bank1] #b00000000) #b00000000)
+assume (= (select [uut.bank2] #b10000000) #b11111111)
+assume (= (select [uut.bank2] #b00000000) #b00000000)
+assume (= (select [uut.bank3] #b10000000) #b00000000)
+assume (= (select [uut.bank3] #b00000000) #b00000000)
+
+state 0
+assume (= [addr] #b1010000000)
+assume (= [clk] #b0)
+assume (= [wdata] #b11110111)
+assume (= [wen] #b1)
+
+state 1
+assume (= [addr] #b1010000000)
+assume (= [clk] #b0)
+assume (= [wdata] #b00000000)
+assume (= [wen] #b0)
+
+state 2
+assume (= [addr] #b0000000000)
+assume (= [clk] #b0)
+assume (= [wdata] #b00000000)
+assume (= [wen] #b0)
