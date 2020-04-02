@@ -1,2 +1,2 @@
-# formal_symbiyosys
+# SymbiYosys & Formal Verification
 My experiments with SymbiYosys
