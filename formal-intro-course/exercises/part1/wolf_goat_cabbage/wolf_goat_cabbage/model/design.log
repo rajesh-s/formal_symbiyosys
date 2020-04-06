@@ -1,0 +1,316 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: wolf_goat_cabbage.sv
+Parsing formal SystemVerilog input from `wolf_goat_cabbage.sv' to AST representation.
+Storing AST representation for module `$abstract\wolf_goat_cabbage'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\wolf_goat_cabbage'.
+Generating RTLIL representation for module `\wolf_goat_cabbage'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \wolf_goat_cabbage
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \wolf_goat_cabbage
+Removing unused module `$abstract\wolf_goat_cabbage'.
+Removed 1 unused modules.
+Module wolf_goat_cabbage directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 13 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:30$47'.
+  Set init value: $formal$wolf_goat_cabbage.sv:30$4_EN = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:25$45'.
+  Set init value: $formal$wolf_goat_cabbage.sv:25$3_EN = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:21$43'.
+  Set init value: $formal$wolf_goat_cabbage.sv:21$2_EN = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:17$41'.
+  Set init value: $formal$wolf_goat_cabbage.sv:17$1_EN = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:13$40'.
+  Set init value: \bank_m = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:12$39'.
+  Set init value: \bank_c = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:11$38'.
+  Set init value: \bank_g = 1'0
+Found init rule in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:10$37'.
+  Set init value: \bank_w = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:30$47'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:25$45'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:21$43'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:17$41'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:13$40'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:12$39'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:11$38'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:10$37'.
+Creating decoders for process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+     1/7: $0$formal$wolf_goat_cabbage.sv:25$3_EN[0:0]$11
+     2/7: $0$formal$wolf_goat_cabbage.sv:25$3_CHECK[0:0]$10
+     3/7: $0$formal$wolf_goat_cabbage.sv:30$4_EN[0:0]$13
+     4/7: $0$formal$wolf_goat_cabbage.sv:30$4_CHECK[0:0]$12
+     5/7: $0\bank_c[0:0]
+     6/7: $0\bank_g[0:0]
+     7/7: $0\bank_w[0:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\wolf_goat_cabbage.\bank_w' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$63' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.\bank_g' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$64' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.\bank_c' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$65' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.\bank_m' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$66' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:17$1_CHECK' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$67' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:17$1_EN' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$68' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:21$2_CHECK' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$69' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:21$2_EN' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$70' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:25$3_CHECK' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$71' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:25$3_EN' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$72' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:30$4_CHECK' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$73' with positive edge clock.
+Creating register for signal `\wolf_goat_cabbage.$formal$wolf_goat_cabbage.sv:30$4_EN' using process `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+  created $dff cell `$procdff$74' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:30$47'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:25$45'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:21$43'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:17$41'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:13$40'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:12$39'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:11$38'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:10$37'.
+Found and cleaned up 5 empty switches in `\wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+Removing empty process `wolf_goat_cabbage.$proc$wolf_goat_cabbage.sv:15$5'.
+Cleaned up 5 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wolf_goat_cabbage.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+Removed 0 unused cells and 27 unused wires.
+<suppressed ~1 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module wolf_goat_cabbage..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wolf_goat_cabbage.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wolf_goat_cabbage'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \wolf_goat_cabbage..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \wolf_goat_cabbage.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wolf_goat_cabbage'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
+
+2.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wolf_goat_cabbage.
+
+2.7.9. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from port Y of cell wolf_goat_cabbage.$add$wolf_goat_cabbage.sv:17$14 ($add).
+Removed top 30 bits (of 32) from port A of cell wolf_goat_cabbage.$add$wolf_goat_cabbage.sv:17$15 ($add).
+Removed top 29 bits (of 32) from port Y of cell wolf_goat_cabbage.$add$wolf_goat_cabbage.sv:17$15 ($add).
+Removed top 29 bits (of 32) from port A of cell wolf_goat_cabbage.$le$wolf_goat_cabbage.sv:17$16 ($le).
+Removed top 31 bits (of 32) from port B of cell wolf_goat_cabbage.$le$wolf_goat_cabbage.sv:17$16 ($le).
+Removed top 30 bits (of 32) from wire wolf_goat_cabbage.$add$wolf_goat_cabbage.sv:17$14_Y.
+Removed top 29 bits (of 32) from wire wolf_goat_cabbage.$add$wolf_goat_cabbage.sv:17$15_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wolf_goat_cabbage.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wolf_goat_cabbage'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+
+2.12.5. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== wolf_goat_cabbage ===
+
+   Number of wires:                 38
+   Number of wire bits:             41
+   Number of public wires:           8
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     $add                            2
+     $assume                         3
+     $cover                          1
+     $dff                           11
+     $eq                             3
+     $le                             1
+     $logic_and                      5
+     $logic_not                      1
+     $mux                            7
+     $ne                             4
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module wolf_goat_cabbage..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+Removed 5 unused cells and 3 unused wires.
+<suppressed ~6 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wolf_goat_cabbage.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wolf_goat_cabbage'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec $formal$wolf_goat_cabbage.sv:25$3_EN = 1'0 to constant driver in module wolf_goat_cabbage.
+Promoting init spec $formal$wolf_goat_cabbage.sv:30$4_EN = 1'0 to constant driver in module wolf_goat_cabbage.
+Promoted 2 init specs to constant drivers.
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module wolf_goat_cabbage.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\wolf_goat_cabbage'.
+Removed a total of 0 cells.
+
+7.8. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \wolf_goat_cabbage..
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module wolf_goat_cabbage..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \wolf_goat_cabbage
+
+9.2. Analyzing design hierarchy..
+Top module:  \wolf_goat_cabbage
+Removed 0 unused modules.
+Module wolf_goat_cabbage directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 1a1c9ed090
+CPU: user 0.04s system 0.01s, MEM: 44.53 MB total, 9.29 MB resident
+Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 27% 7x opt_clean (0 sec), 19% 6x opt_expr (0 sec), ...

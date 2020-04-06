@@ -1,0 +1,29 @@
+SBY  0:05:48 [wolf_goat_cabbage] Removing direcory 'wolf_goat_cabbage'.
+SBY  0:05:48 [wolf_goat_cabbage] Copy 'wolf_goat_cabbage.sv' to 'wolf_goat_cabbage/src/wolf_goat_cabbage.sv'.
+SBY  0:05:48 [wolf_goat_cabbage] engine_0: smtbmc
+SBY  0:05:48 [wolf_goat_cabbage] base: starting process "cd wolf_goat_cabbage/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY  0:05:49 [wolf_goat_cabbage] base: finished (returncode=0)
+SBY  0:05:49 [wolf_goat_cabbage] smt2: starting process "cd wolf_goat_cabbage/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY  0:05:49 [wolf_goat_cabbage] smt2: finished (returncode=0)
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: starting process "cd wolf_goat_cabbage; yosys-smtbmc --presat --unroll -c --noprogress -t 100 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Solver: yices
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 5..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 6..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 7..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Checking cover reachability in step 8..
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Reached cover statement at wolf_goat_cabbage.sv:21 in step 8.
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: ##   0:00:00  Status: passed
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: finished (returncode=0)
+SBY  0:05:49 [wolf_goat_cabbage] engine_0: Status returned by engine: pass
+SBY  0:05:49 [wolf_goat_cabbage] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  0:05:49 [wolf_goat_cabbage] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  0:05:49 [wolf_goat_cabbage] summary: engine_0 (smtbmc) returned pass
+SBY  0:05:49 [wolf_goat_cabbage] DONE (PASS, rc=0)

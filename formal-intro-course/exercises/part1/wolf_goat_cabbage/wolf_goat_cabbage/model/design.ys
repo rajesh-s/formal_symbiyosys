@@ -1,0 +1,14 @@
+# running in wolf_goat_cabbage/src/
+read -formal wolf_goat_cabbage.sv
+prep -top wolf_goat_cabbage
+
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il
