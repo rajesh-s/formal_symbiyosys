@@ -1,0 +1,60 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Fri Feb 28 10:28:20 2020
+[*]
+[dumpfile] "(null)"
+[savefile] "/home/claire/Temp/traffic-lights/intersection.gtkw"
+[timestart] 0
+[size] 1295 826
+[pos] -359 5
+*-8.258204 700 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] intersection.
+[sst_width] 223
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 230
+@29
+intersection.clock
+@28
+intersection.reset
+@200
+-
+@28
+intersection.pedestrian_button
+intersection.turn_sensor
+@200
+-
+@28
+intersection.pedestrian_request
+intersection.up_request
+intersection.down_request
+intersection.turn_request
+@200
+-
+@28
+intersection.pedestrian_waiting
+intersection.up_waiting
+intersection.down_waiting
+intersection.turn_waiting
+@200
+-
+@28
+intersection.pedestrian_blocked
+intersection.up_blocked
+intersection.down_blocked
+intersection.turn_blocked
+@200
+-
+@28
+intersection.pedestrian_green
+intersection.up_green
+intersection.down_green
+intersection.turn_green
+@200
+-
+@28
+intersection.pri_pedestrian_down
+intersection.pri_pedestrian_up
+intersection.pri_turn_down
+[pattern_trace] 1
+[pattern_trace] 0

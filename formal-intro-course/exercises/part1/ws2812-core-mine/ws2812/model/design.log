@@ -1,0 +1,552 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: ws2812.v
+Parsing formal SystemVerilog input from `ws2812.v' to AST representation.
+Storing AST representation for module `$abstract\ws2812'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\ws2812'.
+Generating RTLIL representation for module `\ws2812'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \ws2812
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \ws2812
+Removing unused module `$abstract\ws2812'.
+Removed 1 unused modules.
+Module ws2812 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$ws2812.v:63$22 in module ws2812.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 9 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\ws2812.$proc$ws2812.v:144$96'.
+  Set init value: $formal$ws2812.v:144$18_EN = 1'0
+Found init rule in `\ws2812.$proc$ws2812.v:138$95'.
+  Set init value: \f_past_valid = 1'0
+Found init rule in `\ws2812.$proc$ws2812.v:57$94'.
+  Set init value: \state = 2'01
+Found init rule in `\ws2812.$proc$ws2812.v:52$93'.
+  Set init value: \rgb_counter = 5'00000
+Found init rule in `\ws2812.$proc$ws2812.v:51$92'.
+  Set init value: \bit_counter = 12'000000000000
+Found init rule in `\ws2812.$proc$ws2812.v:50$91'.
+  Set init value: \led_counter = 3'000
+Found init rule in `\ws2812.$proc$ws2812.v:46$90'.
+  Set init value: \data = 1'0
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ws2812.$proc$ws2812.v:144$96'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:138$95'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:57$94'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:52$93'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:51$92'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:50$91'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:46$90'.
+Creating decoders for process `\ws2812.$proc$ws2812.v:146$66'.
+     1/6: $0$formal$ws2812.v:148$19_EN[0:0]$68
+     2/6: $0$formal$ws2812.v:148$19_CHECK[0:0]$67
+     3/6: $0$formal$ws2812.v:149$20_EN[0:0]$70
+     4/6: $0$formal$ws2812.v:149$20_CHECK[0:0]$69
+     5/6: $0$formal$ws2812.v:150$21_EN[0:0]$72
+     6/6: $0$formal$ws2812.v:150$21_CHECK[0:0]$71
+Creating decoders for process `\ws2812.$proc$ws2812.v:141$62'.
+     1/2: $0$formal$ws2812.v:144$18_EN[0:0]$64
+     2/2: $0$formal$ws2812.v:144$18_CHECK[0:0]$63
+Creating decoders for process `\ws2812.$proc$ws2812.v:63$22'.
+     1/34: $1\i[31:0]
+     2/34: $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25
+     3/34: $0$memwr$\led_reg$ws2812.v:73$9_DATA[23:0]$24
+     4/34: $0$memwr$\led_reg$ws2812.v:73$9_ADDR[31:0]$23
+     5/34: $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28
+     6/34: $0$memwr$\led_reg$ws2812.v:73$10_DATA[23:0]$27
+     7/34: $0$memwr$\led_reg$ws2812.v:73$10_ADDR[31:0]$26
+     8/34: $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31
+     9/34: $0$memwr$\led_reg$ws2812.v:73$11_DATA[23:0]$30
+    10/34: $0$memwr$\led_reg$ws2812.v:73$11_ADDR[31:0]$29
+    11/34: $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34
+    12/34: $0$memwr$\led_reg$ws2812.v:73$12_DATA[23:0]$33
+    13/34: $0$memwr$\led_reg$ws2812.v:73$12_ADDR[31:0]$32
+    14/34: $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37
+    15/34: $0$memwr$\led_reg$ws2812.v:73$13_DATA[23:0]$36
+    16/34: $0$memwr$\led_reg$ws2812.v:73$13_ADDR[31:0]$35
+    17/34: $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40
+    18/34: $0$memwr$\led_reg$ws2812.v:73$14_DATA[23:0]$39
+    19/34: $0$memwr$\led_reg$ws2812.v:73$14_ADDR[31:0]$38
+    20/34: $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43
+    21/34: $0$memwr$\led_reg$ws2812.v:73$15_DATA[23:0]$42
+    22/34: $0$memwr$\led_reg$ws2812.v:73$15_ADDR[31:0]$41
+    23/34: $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46
+    24/34: $0$memwr$\led_reg$ws2812.v:73$16_DATA[23:0]$45
+    25/34: $0$memwr$\led_reg$ws2812.v:73$16_ADDR[31:0]$44
+    26/34: $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49
+    27/34: $0$memwr$\led_reg$ws2812.v:86$17_DATA[23:0]$48
+    28/34: $0$memwr$\led_reg$ws2812.v:86$17_ADDR[7:0]$47
+    29/34: $0\led_color[23:0]
+    30/34: $0\state[1:0]
+    31/34: $0\rgb_counter[4:0]
+    32/34: $0\bit_counter[11:0]
+    33/34: $0\led_counter[2:0]
+    34/34: $0\data[0:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ws2812.$formal$ws2812.v:148$19_CHECK' from process `\ws2812.$proc$ws2812.v:146$66'.
+No latch inferred for signal `\ws2812.$formal$ws2812.v:148$19_EN' from process `\ws2812.$proc$ws2812.v:146$66'.
+No latch inferred for signal `\ws2812.$formal$ws2812.v:149$20_CHECK' from process `\ws2812.$proc$ws2812.v:146$66'.
+No latch inferred for signal `\ws2812.$formal$ws2812.v:149$20_EN' from process `\ws2812.$proc$ws2812.v:146$66'.
+No latch inferred for signal `\ws2812.$formal$ws2812.v:150$21_CHECK' from process `\ws2812.$proc$ws2812.v:146$66'.
+No latch inferred for signal `\ws2812.$formal$ws2812.v:150$21_EN' from process `\ws2812.$proc$ws2812.v:146$66'.
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ws2812.\f_past_valid' using process `\ws2812.$proc$ws2812.v:141$62'.
+  created $dff cell `$procdff$266' with positive edge clock.
+Creating register for signal `\ws2812.$formal$ws2812.v:144$18_CHECK' using process `\ws2812.$proc$ws2812.v:141$62'.
+  created $dff cell `$procdff$267' with positive edge clock.
+Creating register for signal `\ws2812.$formal$ws2812.v:144$18_EN' using process `\ws2812.$proc$ws2812.v:141$62'.
+  created $dff cell `$procdff$268' with positive edge clock.
+Creating register for signal `\ws2812.\data' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$269' with positive edge clock.
+Creating register for signal `\ws2812.\led_counter' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$270' with positive edge clock.
+Creating register for signal `\ws2812.\bit_counter' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$271' with positive edge clock.
+Creating register for signal `\ws2812.\rgb_counter' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$272' with positive edge clock.
+Creating register for signal `\ws2812.\state' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$273' with positive edge clock.
+Creating register for signal `\ws2812.\led_color' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$274' with positive edge clock.
+Creating register for signal `\ws2812.\i' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$275' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$9_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$276' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$9_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$277' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$9_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$278' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$10_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$279' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$10_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$280' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$10_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$281' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$11_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$282' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$11_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$283' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$11_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$284' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$12_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$285' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$12_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$286' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$12_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$287' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$13_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$288' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$13_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$289' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$13_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$290' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$14_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$291' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$14_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$292' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$14_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$293' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$15_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$294' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$15_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$295' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$15_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$296' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$16_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$297' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$16_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$298' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:73$16_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$299' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:86$17_ADDR' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$300' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:86$17_DATA' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$301' with positive edge clock.
+Creating register for signal `\ws2812.$memwr$\led_reg$ws2812.v:86$17_EN' using process `\ws2812.$proc$ws2812.v:63$22'.
+  created $dff cell `$procdff$302' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `ws2812.$proc$ws2812.v:144$96'.
+Removing empty process `ws2812.$proc$ws2812.v:138$95'.
+Removing empty process `ws2812.$proc$ws2812.v:57$94'.
+Removing empty process `ws2812.$proc$ws2812.v:52$93'.
+Removing empty process `ws2812.$proc$ws2812.v:51$92'.
+Removing empty process `ws2812.$proc$ws2812.v:50$91'.
+Removing empty process `ws2812.$proc$ws2812.v:46$90'.
+Found and cleaned up 1 empty switch in `\ws2812.$proc$ws2812.v:146$66'.
+Removing empty process `ws2812.$proc$ws2812.v:146$66'.
+Found and cleaned up 1 empty switch in `\ws2812.$proc$ws2812.v:141$62'.
+Removing empty process `ws2812.$proc$ws2812.v:141$62'.
+Found and cleaned up 8 empty switches in `\ws2812.$proc$ws2812.v:63$22'.
+Removing empty process `ws2812.$proc$ws2812.v:63$22'.
+Cleaned up 10 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+<suppressed ~15 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+Removed 3 unused cells and 121 unused wires.
+<suppressed ~5 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module ws2812..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812'.
+<suppressed ~30 debug messages>
+Removed a total of 10 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812.
+    Consolidated identical input bits for $mux cell $procmux$118:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] $0$memwr$\led_reg$ws2812.v:73$9_EN[23:0]$25 [0] }
+    Consolidated identical input bits for $mux cell $procmux$127:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] $0$memwr$\led_reg$ws2812.v:73$10_EN[23:0]$28 [0] }
+    Consolidated identical input bits for $mux cell $procmux$136:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] $0$memwr$\led_reg$ws2812.v:73$11_EN[23:0]$31 [0] }
+    Consolidated identical input bits for $mux cell $procmux$145:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] $0$memwr$\led_reg$ws2812.v:73$12_EN[23:0]$34 [0] }
+    Consolidated identical input bits for $mux cell $procmux$154:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] $0$memwr$\led_reg$ws2812.v:73$13_EN[23:0]$37 [0] }
+    Consolidated identical input bits for $mux cell $procmux$163:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] $0$memwr$\led_reg$ws2812.v:73$14_EN[23:0]$40 [0] }
+    Consolidated identical input bits for $mux cell $procmux$172:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] $0$memwr$\led_reg$ws2812.v:73$15_EN[23:0]$43 [0] }
+    Consolidated identical input bits for $mux cell $procmux$181:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [23:1] = { $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] $0$memwr$\led_reg$ws2812.v:73$16_EN[23:0]$46 [0] }
+    Consolidated identical input bits for $mux cell $procmux$189:
+      Old ports: A=24'000000000000000000000000, B=24'111111111111111111111111, Y=$procmux$189_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$189_Y [0]
+      New connections: $procmux$189_Y [23:1] = { $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] $procmux$189_Y [0] }
+  Optimizing cells in module \ws2812.
+    Consolidated identical input bits for $mux cell $procmux$192:
+      Old ports: A=$procmux$189_Y, B=24'000000000000000000000000, Y=$0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49
+      New ports: A=$procmux$189_Y [0], B=1'0, Y=$0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0]
+      New connections: $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [23:1] = { $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] $0$memwr$\led_reg$ws2812.v:86$17_EN[23:0]$49 [0] }
+  Optimizing cells in module \ws2812.
+Performed a total of 10 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812'.
+<suppressed ~90 debug messages>
+Removed a total of 30 cells.
+
+2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+Removed 0 unused cells and 40 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+
+2.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ws2812..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+2.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ws2812.
+Performed a total of 0 changes.
+
+2.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812'.
+Removed a total of 0 cells.
+
+2.7.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+
+2.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+
+2.7.16. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 29 address bits (of 32) from memory read port ws2812.$memrd$\led_reg$ws2812.v:148$73 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$77 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$78 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$79 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$80 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$81 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$82 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$83 (led_reg).
+Removed top 29 address bits (of 32) from memory write port ws2812.$memwr$\led_reg$ws2812.v:73$84 (led_reg).
+Removed top 5 address bits (of 8) from memory write port ws2812.$memwr$\led_reg$ws2812.v:86$85 (led_reg).
+Removed top 29 bits (of 32) from port B of cell ws2812.$gt$ws2812.v:108$54 ($gt).
+Removed top 28 bits (of 32) from port B of cell ws2812.$gt$ws2812.v:110$55 ($gt).
+Removed top 31 bits (of 32) from port B of cell ws2812.$sub$ws2812.v:113$56 ($sub).
+Removed top 20 bits (of 32) from port Y of cell ws2812.$sub$ws2812.v:113$56 ($sub).
+Removed top 31 bits (of 32) from port B of cell ws2812.$sub$ws2812.v:118$58 ($sub).
+Removed top 27 bits (of 32) from port Y of cell ws2812.$sub$ws2812.v:118$58 ($sub).
+Removed top 31 bits (of 32) from port B of cell ws2812.$sub$ws2812.v:121$60 ($sub).
+Removed top 29 bits (of 32) from port Y of cell ws2812.$sub$ws2812.v:121$60 ($sub).
+Removed top 1 bits (of 2) from port B of cell ws2812.$procmux$217_CMP0 ($eq).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$276 ($dff).
+Removed top 23 bits (of 24) from FF cell ws2812.$procdff$278 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$279 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$282 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$285 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$288 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$291 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$294 ($dff).
+Removed top 29 bits (of 32) from FF cell ws2812.$procdff$297 ($dff).
+Removed top 5 bits (of 8) from FF cell ws2812.$procdff$300 ($dff).
+Removed top 23 bits (of 24) from FF cell ws2812.$procdff$302 ($dff).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$124 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$133 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$142 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$151 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$160 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$169 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$178 ($mux).
+Removed top 29 bits (of 32) from mux cell ws2812.$procmux$187 ($mux).
+Removed top 5 bits (of 8) from mux cell ws2812.$procmux$202 ($mux).
+Removed top 5 bits (of 8) from mux cell ws2812.$procmux$199 ($mux).
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$10_ADDR[31:0]$26.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$11_ADDR[31:0]$29.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$12_ADDR[31:0]$32.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$13_ADDR[31:0]$35.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$14_ADDR[31:0]$38.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$15_ADDR[31:0]$41.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$16_ADDR[31:0]$44.
+Removed top 29 bits (of 32) from wire ws2812.$0$memwr$\led_reg$ws2812.v:73$9_ADDR[31:0]$23.
+Removed top 5 bits (of 8) from wire ws2812.$0$memwr$\led_reg$ws2812.v:86$17_ADDR[7:0]$47.
+Removed top 29 bits (of 32) from wire ws2812.$memwr$\led_reg$ws2812.v:73$10_ADDR.
+Removed top 29 bits (of 32) from wire ws2812.$memwr$\led_reg$ws2812.v:73$11_ADDR.
+Removed top 29 bits (of 32) from wire ws2812.$memwr$\led_reg$ws2812.v:73$13_ADDR.
+Removed top 29 bits (of 32) from wire ws2812.$memwr$\led_reg$ws2812.v:73$9_ADDR.
+Removed top 5 bits (of 8) from wire ws2812.$procmux$199_Y.
+Removed top 20 bits (of 32) from wire ws2812.$sub$ws2812.v:113$56_Y.
+Removed top 27 bits (of 32) from wire ws2812.$sub$ws2812.v:118$58_Y.
+Removed top 29 bits (of 32) from wire ws2812.$sub$ws2812.v:121$60_Y.
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\led_reg$ws2812.v:73$77' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$78' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$79' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$80' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$81' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$82' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$83' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:73$84' in module `\ws2812': merged $dff to cell.
+Checking cell `$memwr$\led_reg$ws2812.v:86$85' in module `\ws2812': merged $dff to cell.
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+Removed 13 unused cells and 30 unused wires.
+<suppressed ~14 debug messages>
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\led_reg' in module `\ws2812':
+  $memwr$\led_reg$ws2812.v:73$77 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$78 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$79 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$80 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$81 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$82 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$83 ($memwr)
+  $memwr$\led_reg$ws2812.v:73$84 ($memwr)
+  $memwr$\led_reg$ws2812.v:86$85 ($memwr)
+  $memrd$\led_reg$ws2812.v:87$50 ($memrd)
+  $memrd$\led_reg$ws2812.v:148$73 ($memrd)
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+
+2.12.5. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== ws2812 ===
+
+   Number of wires:                 75
+   Number of wire bits:            569
+   Number of public wires:          12
+   Number of public wire bits:      83
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 73
+     $assume                         2
+     $cover                          2
+     $dff                            9
+     $eq                             1
+     $gt                             2
+     $logic_not                      4
+     $mem                            1
+     $mux                           42
+     $pmux                           5
+     $reduce_bool                    1
+     $shiftx                         1
+     $sub                            3
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module ws2812..
+found and reported 0 problems.
+
+3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+4. Executing ASYNC2SYNC pass.
+
+5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+Removed 2 unused cells and 1 unused wires.
+<suppressed ~3 debug messages>
+
+6. Executing SETUNDEF pass (replace undef values with defined constants).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+Promoting init spec $formal$ws2812.v:144$18_EN = 1'0 to constant driver in module ws2812.
+Promoted 1 init specs to constant drivers.
+
+7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+Removed 1 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+
+7.5. Rerunning OPT passes. (Removed registers in this run.)
+
+7.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ws2812.
+
+7.7. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ws2812'.
+Removed a total of 0 cells.
+
+7.8. Executing OPT_RMDFF pass (remove dff with constant values).
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ws2812..
+
+7.10. Finished fast OPT passes.
+
+8. Executing CHECK pass (checking for obvious problems).
+checking module ws2812..
+found and reported 0 problems.
+
+9. Executing HIERARCHY pass (managing design hierarchy).
+
+9.1. Analyzing design hierarchy..
+Top module:  \ws2812
+
+9.2. Analyzing design hierarchy..
+Top module:  \ws2812
+Removed 0 unused modules.
+Module ws2812 directly or indirectly contains formal properties -> setting "keep" attribute.
+
+10. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 856d498008
+CPU: user 0.11s system 0.00s, MEM: 46.33 MB total, 11.61 MB resident
+Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 27% 8x opt_clean (0 sec), 14% 7x opt_expr (0 sec), ...

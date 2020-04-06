@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.105 (w)1999-2020 BSI
+[*] Tue Mar 31 12:24:22 2020
+[*]
+[dumpfile] "/home/matt/work/symbiotic/intro-course/exercises/part1/ws2812-core/ws2812/engine_0/trace0.vcd"
+[dumpfile_mtime] "Tue Mar 31 12:23:25 2020"
+[dumpfile_size] 1670
+[savefile] "/home/matt/work/symbiotic/intro-course/exercises/part1/ws2812-core/ws2812_formal.gtkw"
+[timestart] 0
+[size] 1867 1018
+[pos] 946 119
+*-4.296556 290 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 257
+[signals_width] 385
+[sst_expanded] 1
+[sst_vpaned_height] 260
+@28
+ws2812.clk
+ws2812.reset
+@24
+ws2812.rgb_counter[4:0]
+@28
+ws2812.data
+ws2812.state[1:0]
+@22
+ws2812.led_num[7:0]
+@28
+ws2812.write
+@22
+ws2812.rgb_data[23:0]
+ws2812.led_reg<0>[23:0]
+@23
+ws2812.led_reg<7>[23:0]
+[pattern_trace] 1
+[pattern_trace] 0

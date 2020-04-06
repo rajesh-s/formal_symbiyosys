@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites disabled="0" errors="0" failures="1" tests="1" time="28">
+<testsuite disabled="0" errors="0" failures="1" name="ws2812" skipped="0" tests="1" time="28">
+<properties>
+<property name="os" value="posix"/>
+</properties>
+<testcase classname="ws2812" name="default" status="FAIL" time="28">
+<failure message="FAIL" type="FAIL"/>
+<system-out>SBY  1:00:28 [ws2812] Removing direcory 'ws2812'.
+SBY  1:00:28 [ws2812] Copy 'ws2812.v' to 'ws2812/src/ws2812.v'.
+SBY  1:00:28 [ws2812] engine_0: smtbmc
+SBY  1:00:28 [ws2812] base: starting process &quot;cd ws2812/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY  1:00:28 [ws2812] base: finished (returncode=0)
+SBY  1:00:28 [ws2812] smt2: starting process &quot;cd ws2812/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY  1:00:28 [ws2812] smt2: finished (returncode=0)
+SBY  1:00:28 [ws2812] engine_0: starting process &quot;cd ws2812; yosys-smtbmc --presat --unroll -c --noprogress -t 100 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2&quot;
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Solver: yices
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 0..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 1..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Reached cover statement at ws2812.v:148 in step 2.
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace0_tb.v
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace0.smtc
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 2..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 3..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 4..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 5..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 6..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 7..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 8..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 9..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 10..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 11..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 12..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 13..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 14..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 15..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 16..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 17..
+SBY  1:00:28 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 18..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 19..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 20..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 21..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 22..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 23..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 24..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 25..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 26..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 27..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:00  Checking cover reachability in step 28..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 29..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 30..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 31..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 32..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 33..
+SBY  1:00:29 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 34..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 35..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 36..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 37..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 38..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:01  Checking cover reachability in step 39..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 40..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 41..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 42..
+SBY  1:00:30 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 43..
+SBY  1:00:31 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 44..
+SBY  1:00:31 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 45..
+SBY  1:00:31 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 46..
+SBY  1:00:31 [ws2812] engine_0: ##   0:00:02  Checking cover reachability in step 47..
+SBY  1:00:31 [ws2812] engine_0: ##   0:00:03  Checking cover reachability in step 48..
+SBY  1:00:31 [ws2812] engine_0: ##   0:00:03  Checking cover reachability in step 49..
+SBY  1:00:32 [ws2812] engine_0: ##   0:00:03  Checking cover reachability in step 50..
+SBY  1:00:32 [ws2812] engine_0: ##   0:00:03  Checking cover reachability in step 51..
+SBY  1:00:32 [ws2812] engine_0: ##   0:00:03  Checking cover reachability in step 52..
+SBY  1:00:32 [ws2812] engine_0: ##   0:00:04  Checking cover reachability in step 53..
+SBY  1:00:32 [ws2812] engine_0: ##   0:00:04  Checking cover reachability in step 54..
+SBY  1:00:33 [ws2812] engine_0: ##   0:00:04  Checking cover reachability in step 55..
+SBY  1:00:33 [ws2812] engine_0: ##   0:00:04  Checking cover reachability in step 56..
+SBY  1:00:33 [ws2812] engine_0: ##   0:00:05  Checking cover reachability in step 57..
+SBY  1:00:33 [ws2812] engine_0: ##   0:00:05  Checking cover reachability in step 58..
+SBY  1:00:34 [ws2812] engine_0: ##   0:00:05  Checking cover reachability in step 59..
+SBY  1:00:34 [ws2812] engine_0: ##   0:00:05  Checking cover reachability in step 60..
+SBY  1:00:34 [ws2812] engine_0: ##   0:00:06  Checking cover reachability in step 61..
+SBY  1:00:34 [ws2812] engine_0: ##   0:00:06  Checking cover reachability in step 62..
+SBY  1:00:35 [ws2812] engine_0: ##   0:00:06  Checking cover reachability in step 63..
+SBY  1:00:35 [ws2812] engine_0: ##   0:00:06  Checking cover reachability in step 64..
+SBY  1:00:35 [ws2812] engine_0: ##   0:00:07  Checking cover reachability in step 65..
+SBY  1:00:36 [ws2812] engine_0: ##   0:00:07  Checking cover reachability in step 66..
+SBY  1:00:36 [ws2812] engine_0: ##   0:00:07  Checking cover reachability in step 67..
+SBY  1:00:36 [ws2812] engine_0: ##   0:00:08  Checking cover reachability in step 68..
+SBY  1:00:37 [ws2812] engine_0: ##   0:00:08  Checking cover reachability in step 69..
+SBY  1:00:37 [ws2812] engine_0: ##   0:00:09  Checking cover reachability in step 70..
+SBY  1:00:37 [ws2812] engine_0: ##   0:00:09  Checking cover reachability in step 71..
+SBY  1:00:38 [ws2812] engine_0: ##   0:00:09  Checking cover reachability in step 72..
+SBY  1:00:38 [ws2812] engine_0: ##   0:00:10  Checking cover reachability in step 73..
+SBY  1:00:39 [ws2812] engine_0: ##   0:00:10  Checking cover reachability in step 74..
+SBY  1:00:39 [ws2812] engine_0: ##   0:00:10  Checking cover reachability in step 75..
+SBY  1:00:39 [ws2812] engine_0: ##   0:00:11  Checking cover reachability in step 76..
+SBY  1:00:40 [ws2812] engine_0: ##   0:00:11  Checking cover reachability in step 77..
+SBY  1:00:40 [ws2812] engine_0: ##   0:00:12  Checking cover reachability in step 78..
+SBY  1:00:41 [ws2812] engine_0: ##   0:00:12  Checking cover reachability in step 79..
+SBY  1:00:41 [ws2812] engine_0: ##   0:00:13  Checking cover reachability in step 80..
+SBY  1:00:42 [ws2812] engine_0: ##   0:00:13  Checking cover reachability in step 81..
+SBY  1:00:42 [ws2812] engine_0: ##   0:00:14  Checking cover reachability in step 82..
+SBY  1:00:43 [ws2812] engine_0: ##   0:00:14  Checking cover reachability in step 83..
+SBY  1:00:43 [ws2812] engine_0: ##   0:00:15  Checking cover reachability in step 84..
+SBY  1:00:44 [ws2812] engine_0: ##   0:00:15  Checking cover reachability in step 85..
+SBY  1:00:45 [ws2812] engine_0: ##   0:00:16  Checking cover reachability in step 86..
+SBY  1:00:45 [ws2812] engine_0: ##   0:00:17  Checking cover reachability in step 87..
+SBY  1:00:46 [ws2812] engine_0: ##   0:00:17  Checking cover reachability in step 88..
+SBY  1:00:46 [ws2812] engine_0: ##   0:00:18  Checking cover reachability in step 89..
+SBY  1:00:47 [ws2812] engine_0: ##   0:00:19  Checking cover reachability in step 90..
+SBY  1:00:48 [ws2812] engine_0: ##   0:00:19  Checking cover reachability in step 91..
+SBY  1:00:49 [ws2812] engine_0: ##   0:00:20  Checking cover reachability in step 92..
+SBY  1:00:49 [ws2812] engine_0: ##   0:00:21  Checking cover reachability in step 93..
+SBY  1:00:50 [ws2812] engine_0: ##   0:00:21  Checking cover reachability in step 94..
+SBY  1:00:51 [ws2812] engine_0: ##   0:00:22  Checking cover reachability in step 95..
+SBY  1:00:51 [ws2812] engine_0: ##   0:00:23  Checking cover reachability in step 96..
+SBY  1:00:52 [ws2812] engine_0: ##   0:00:24  Checking cover reachability in step 97..
+SBY  1:00:53 [ws2812] engine_0: ##   0:00:24  Checking cover reachability in step 98..
+SBY  1:00:54 [ws2812] engine_0: ##   0:00:25  Checking cover reachability in step 99..
+SBY  1:00:54 [ws2812] engine_0: ##   0:00:26  Unreached cover statement at ws2812.v:150.
+SBY  1:00:54 [ws2812] engine_0: ##   0:00:26  Status: failed
+SBY  1:00:54 [ws2812] engine_0: finished (returncode=1)
+SBY  1:00:54 [ws2812] engine_0: Status returned by engine: FAIL
+SBY  1:00:54 [ws2812] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:26 (26)
+SBY  1:00:54 [ws2812] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:28 (28)
+SBY  1:00:54 [ws2812] summary: engine_0 (smtbmc) returned FAIL
+SBY  1:00:54 [ws2812] DONE (FAIL, rc=2)
+</system-out></testcase></testsuite></testsuites>

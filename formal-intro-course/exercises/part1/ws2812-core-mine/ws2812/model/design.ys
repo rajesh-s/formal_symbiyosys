@@ -1,0 +1,14 @@
+# running in ws2812/src/
+read -formal ws2812.v
+prep -top ws2812
+
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

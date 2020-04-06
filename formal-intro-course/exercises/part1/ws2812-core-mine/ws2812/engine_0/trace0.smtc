@@ -1,0 +1,31 @@
+initial
+assume (= [bit_counter] #b000000000000)
+assume (= [data] false)
+assume (= [f_past_valid] false)
+assume (= [led_color] #b000000000000000000000000)
+assume (= [led_counter] #b000)
+assume (= [rgb_counter] #b00000)
+assume (= [state] #b01)
+assume (= (select [led_reg] #b000) #b000000000000000000000000)
+assume (= (select [led_reg] #b111) #b000000000000000000000000)
+
+state 0
+assume (= [clk] false)
+assume (= [led_num] #b00000000)
+assume (= [reset] true)
+assume (= [rgb_data] #b000000000000000000000000)
+assume (= [write] false)
+
+state 1
+assume (= [clk] false)
+assume (= [led_num] #b00000111)
+assume (= [reset] false)
+assume (= [rgb_data] #b111111111111111111111111)
+assume (= [write] true)
+
+state 2
+assume (= [clk] false)
+assume (= [led_num] #b00000000)
+assume (= [reset] false)
+assume (= [rgb_data] #b000000000000000000000000)
+assume (= [write] true)

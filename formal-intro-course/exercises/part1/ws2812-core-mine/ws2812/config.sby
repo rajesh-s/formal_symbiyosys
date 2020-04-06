@@ -1,0 +1,13 @@
+[options]
+mode cover
+depth 100
+
+[engines]
+smtbmc
+
+[script]
+read -formal ws2812.v
+prep -top ws2812 
+
+[files]
+ws2812.v
