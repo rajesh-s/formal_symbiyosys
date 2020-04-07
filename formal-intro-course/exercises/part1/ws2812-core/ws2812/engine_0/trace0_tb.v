@@ -8,17 +8,17 @@ module testbench(input clock, output reg genclock);
 `endif
   reg genclock = 1;
   reg [31:0] cycle = 0;
-  wire [0:0] PI_clk = clock;
-  reg [7:0] PI_led_num;
-  reg [23:0] PI_rgb_data;
-  reg [0:0] PI_reset;
   reg [0:0] PI_write;
+  reg [7:0] PI_led_num;
+  reg [0:0] PI_reset;
+  wire [0:0] PI_clk = clock;
+  reg [23:0] PI_rgb_data;
   ws2812 UUT (
-    .clk(PI_clk),
+    .write(PI_write),
     .led_num(PI_led_num),
-    .rgb_data(PI_rgb_data),
     .reset(PI_reset),
-    .write(PI_write)
+    .clk(PI_clk),
+    .rgb_data(PI_rgb_data)
   );
 `ifndef VERILATOR
   initial begin
@@ -48,26 +48,26 @@ module testbench(input clock, output reg genclock);
     UUT.led_reg[3'b111] = 24'b000000000000000000000000;
 
     // state 0
-    PI_led_num = 8'b00000000;
-    PI_rgb_data = 24'b000000000000000000000000;
-    PI_reset = 1'b1;
     PI_write = 1'b0;
+    PI_led_num = 8'b00000000;
+    PI_reset = 1'b1;
+    PI_rgb_data = 24'b000000000000000000000000;
   end
   always @(posedge clock) begin
     // state 1
     if (cycle == 0) begin
-      PI_led_num <= 8'b00000111;
-      PI_rgb_data <= 24'b111111111111111111111111;
-      PI_reset <= 1'b0;
       PI_write <= 1'b1;
+      PI_led_num <= 8'b00000111;
+      PI_reset <= 1'b0;
+      PI_rgb_data <= 24'b111111111111111111111111;
     end
 
     // state 2
     if (cycle == 1) begin
+      PI_write <= 1'b0;
       PI_led_num <= 8'b00000000;
-      PI_rgb_data <= 24'b000000000000000000000000;
       PI_reset <= 1'b0;
-      PI_write <= 1'b1;
+      PI_rgb_data <= 24'b000000000000000000000000;
     end
 
     genclock <= cycle < 2;

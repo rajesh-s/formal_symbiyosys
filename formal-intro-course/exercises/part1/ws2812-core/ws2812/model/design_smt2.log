@@ -31,23 +31,23 @@ Input filename: design.il
 
 === ws2812 ===
 
-   Number of wires:                 90
-   Number of wire bits:            673
+   Number of wires:                 88
+   Number of wire bits:            671
    Number of public wires:          12
    Number of public wire bits:      83
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 88
-     $anyseq                        17
-     $assume                         2
+   Number of cells:                 85
+     $anyseq                        16
+     $assume                         1
      $cover                          2
      $dff                            7
      $eq                             1
      $gt                             2
      $logic_not                      4
      $mem                            1
-     $mux                           42
+     $mux                           41
      $pmux                           5
      $reduce_bool                    1
      $shiftx                         1
@@ -56,7 +56,7 @@ Input filename: design.il
 3. Executing SMT2 backend.
 Creating SMT-LIBv2 representation of module ws2812.
 
-End of script. Logfile hash: 9a3b4b2a2c
-CPU: user 0.00s system 0.00s, MEM: 44.65 MB total, 8.08 MB resident
+End of script. Logfile hash: 25bf113397
+CPU: user 0.01s system 0.00s, MEM: 44.65 MB total, 8.16 MB resident
 Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 64% 2x write_smt2 (0 sec), 33% 2x read_ilang (0 sec), ...
+Time spent: 60% 2x write_smt2 (0 sec), 37% 2x read_ilang (0 sec), ...

@@ -57,14 +57,13 @@ Generate a trace that shows the LED data on the data output pin changing.
 
 * Write a cover statement that will generate a trace of the data pin changing.
 * Add your cover to ws2812.v at the bottom of the file in the FORMAL section.
-* Run the tools and generate a trace. Can you manage it? How?
+* Run the tools and generate a trace. Can you manage it? How? - Had to change the t_reset count because the large value would prevent cover
 
 ## Cover some of the Traffic Light demo behaviour
 
 ### Aim
 
-Take a look at the traffic lights demo. Check the picture to understand the way the lights
-are arranged.
+Take a look at the traffic lights demo. Check the picture to understand the way the lights are arranged.
 
 ### Method
 
@@ -79,4 +78,3 @@ Add some more properties to cover things like:
 
 * pedestrian green -> down green
 * up_green -> turn_green
-

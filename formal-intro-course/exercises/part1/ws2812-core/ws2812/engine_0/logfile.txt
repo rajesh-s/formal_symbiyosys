@@ -33,7 +33,7 @@
 ##   0:00:00  Checking cover reachability in step 26..
 ##   0:00:00  Checking cover reachability in step 27..
 ##   0:00:00  Checking cover reachability in step 28..
-##   0:00:01  Checking cover reachability in step 29..
+##   0:00:00  Checking cover reachability in step 29..
 ##   0:00:01  Checking cover reachability in step 30..
 ##   0:00:01  Checking cover reachability in step 31..
 ##   0:00:01  Checking cover reachability in step 32..
@@ -44,7 +44,7 @@
 ##   0:00:01  Checking cover reachability in step 37..
 ##   0:00:01  Checking cover reachability in step 38..
 ##   0:00:01  Checking cover reachability in step 39..
-##   0:00:02  Checking cover reachability in step 40..
+##   0:00:01  Checking cover reachability in step 40..
 ##   0:00:02  Checking cover reachability in step 41..
 ##   0:00:02  Checking cover reachability in step 42..
 ##   0:00:02  Checking cover reachability in step 43..
@@ -57,15 +57,15 @@
 ##   0:00:03  Checking cover reachability in step 50..
 ##   0:00:03  Checking cover reachability in step 51..
 ##   0:00:03  Checking cover reachability in step 52..
-##   0:00:04  Checking cover reachability in step 53..
+##   0:00:03  Checking cover reachability in step 53..
 ##   0:00:04  Checking cover reachability in step 54..
 ##   0:00:04  Checking cover reachability in step 55..
 ##   0:00:04  Checking cover reachability in step 56..
-##   0:00:05  Checking cover reachability in step 57..
+##   0:00:04  Checking cover reachability in step 57..
 ##   0:00:05  Checking cover reachability in step 58..
 ##   0:00:05  Checking cover reachability in step 59..
 ##   0:00:05  Checking cover reachability in step 60..
-##   0:00:06  Checking cover reachability in step 61..
+##   0:00:05  Checking cover reachability in step 61..
 ##   0:00:06  Checking cover reachability in step 62..
 ##   0:00:06  Checking cover reachability in step 63..
 ##   0:00:06  Checking cover reachability in step 64..
@@ -74,7 +74,7 @@
 ##   0:00:07  Checking cover reachability in step 67..
 ##   0:00:08  Checking cover reachability in step 68..
 ##   0:00:08  Checking cover reachability in step 69..
-##   0:00:09  Checking cover reachability in step 70..
+##   0:00:08  Checking cover reachability in step 70..
 ##   0:00:09  Checking cover reachability in step 71..
 ##   0:00:09  Checking cover reachability in step 72..
 ##   0:00:10  Checking cover reachability in step 73..
@@ -97,12 +97,12 @@
 ##   0:00:19  Checking cover reachability in step 90..
 ##   0:00:19  Checking cover reachability in step 91..
 ##   0:00:20  Checking cover reachability in step 92..
-##   0:00:21  Checking cover reachability in step 93..
+##   0:00:20  Checking cover reachability in step 93..
 ##   0:00:21  Checking cover reachability in step 94..
 ##   0:00:22  Checking cover reachability in step 95..
 ##   0:00:23  Checking cover reachability in step 96..
-##   0:00:24  Checking cover reachability in step 97..
+##   0:00:23  Checking cover reachability in step 97..
 ##   0:00:24  Checking cover reachability in step 98..
 ##   0:00:25  Checking cover reachability in step 99..
-##   0:00:26  Unreached cover statement at ws2812.v:150.
+##   0:00:26  Unreached cover statement at ws2812.v:149.
 ##   0:00:26  Status: failed

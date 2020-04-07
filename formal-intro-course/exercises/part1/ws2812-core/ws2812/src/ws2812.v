@@ -146,7 +146,6 @@ module ws2812 (
         always @(*) begin
           if(f_past_valid) begin
             cover(led_reg[7] != 0);
-            assume(state==1);
             cover(data!=0);
           end
         end
