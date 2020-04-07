@@ -1,3 +1,3 @@
 # Formal Verification introduction course
 
-clone with --recursive to get the submodules.
+Course material from https://github.com/mattvenn/formal-intro-course
