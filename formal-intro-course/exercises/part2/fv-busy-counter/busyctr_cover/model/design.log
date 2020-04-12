@@ -1,0 +1,304 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: busyctr.v
+Parsing formal SystemVerilog input from `busyctr.v' to AST representation.
+Storing AST representation for module `$abstract\busyctr'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\busyctr'.
+Generating RTLIL representation for module `\busyctr'.
+
+2.2.1. Analyzing design hierarchy..
+Top module:  \busyctr
+
+2.2.2. Analyzing design hierarchy..
+Top module:  \busyctr
+Removing unused module `$abstract\busyctr'.
+Removed 1 unused modules.
+Module busyctr directly or indirectly contains formal properties -> setting "keep" attribute.
+
+2.3. Executing PROC pass (convert processes to netlists).
+
+2.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$busyctr.v:13$5 in module busyctr.
+Removed a total of 0 dead cases.
+
+2.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 8 assignments to connections.
+
+2.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\busyctr.$proc$busyctr.v:42$33'.
+  Set init value: $formal$busyctr.v:42$4_EN = 1'0
+Found init rule in `\busyctr.$proc$busyctr.v:37$31'.
+  Set init value: $formal$busyctr.v:37$3_EN = 1'0
+Found init rule in `\busyctr.$proc$busyctr.v:26$30'.
+  Set init value: \f_past_valid = 1'0
+Found init rule in `\busyctr.$proc$busyctr.v:12$29'.
+  Set init value: \counter = 16'0000000000000000
+
+2.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\busyctr.$proc$busyctr.v:42$33'.
+Creating decoders for process `\busyctr.$proc$busyctr.v:37$31'.
+Creating decoders for process `\busyctr.$proc$busyctr.v:26$30'.
+Creating decoders for process `\busyctr.$proc$busyctr.v:12$29'.
+Creating decoders for process `\busyctr.$proc$busyctr.v:27$12'.
+     1/4: $0$formal$busyctr.v:37$3_EN[0:0]$16
+     2/4: $0$formal$busyctr.v:37$3_CHECK[0:0]$15
+     3/4: $0$formal$busyctr.v:42$4_EN[0:0]$18
+     4/4: $0$formal$busyctr.v:42$4_CHECK[0:0]$17
+Creating decoders for process `\busyctr.$proc$busyctr.v:21$10'.
+Creating decoders for process `\busyctr.$proc$busyctr.v:13$5'.
+     1/1: $0\counter[15:0]
+
+2.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\busyctr.\o_busy' from process `\busyctr.$proc$busyctr.v:21$10'.
+
+2.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\busyctr.\f_past_valid' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$55' with positive edge clock.
+Creating register for signal `\busyctr.$past$busyctr.v:41$1$0' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$56' with positive edge clock.
+Creating register for signal `\busyctr.$past$busyctr.v:42$2$0' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$57' with positive edge clock.
+Creating register for signal `\busyctr.$formal$busyctr.v:37$3_CHECK' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$58' with positive edge clock.
+Creating register for signal `\busyctr.$formal$busyctr.v:37$3_EN' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$59' with positive edge clock.
+Creating register for signal `\busyctr.$formal$busyctr.v:42$4_CHECK' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$60' with positive edge clock.
+Creating register for signal `\busyctr.$formal$busyctr.v:42$4_EN' using process `\busyctr.$proc$busyctr.v:27$12'.
+  created $dff cell `$procdff$61' with positive edge clock.
+Creating register for signal `\busyctr.\counter' using process `\busyctr.$proc$busyctr.v:13$5'.
+  created $dff cell `$procdff$62' with positive edge clock.
+
+2.3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `busyctr.$proc$busyctr.v:42$33'.
+Removing empty process `busyctr.$proc$busyctr.v:37$31'.
+Removing empty process `busyctr.$proc$busyctr.v:26$30'.
+Removing empty process `busyctr.$proc$busyctr.v:12$29'.
+Found and cleaned up 3 empty switches in `\busyctr.$proc$busyctr.v:27$12'.
+Removing empty process `busyctr.$proc$busyctr.v:27$12'.
+Removing empty process `busyctr.$proc$busyctr.v:21$10'.
+Found and cleaned up 3 empty switches in `\busyctr.$proc$busyctr.v:13$5'.
+Removing empty process `busyctr.$proc$busyctr.v:13$5'.
+Cleaned up 6 empty switches.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+<suppressed ~4 debug messages>
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+Removed 0 unused cells and 23 unused wires.
+<suppressed ~1 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+checking module busyctr..
+found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\busyctr'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \busyctr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$37: \o_busy -> 1'1
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \busyctr.
+Performed a total of 0 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\busyctr'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+
+2.7.9. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell busyctr.$sub$busyctr.v:42$25 ($sub).
+Removed top 15 bits (of 32) from port Y of cell busyctr.$sub$busyctr.v:42$25 ($sub).
+
+2.9. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+2.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+
+2.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.12. Executing OPT pass (performing simple optimizations).
+
+2.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+
+2.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\busyctr'.
+Removed a total of 0 cells.
+
+2.12.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+
+2.12.5. Finished fast OPT passes.
+
+2.13. Printing statistics.
+
+=== busyctr ===
+
+   Number of wires:                 31
+   Number of wire bits:            152
+   Number of public wires:           6
+   Number of public wire bits:      21
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 30
+     $assert                         2
+     $dff                            8
+     $eq                             1
+     $logic_and                      4
+     $logic_not                      3
+     $mux                            9
+     $reduce_bool                    1
+     $sub                            2
+
+2.14. Executing CHECK pass (checking for obvious problems).
+checking module busyctr..
+found and reported 0 problems.
+
+3. Executing OPT pass (performing simple optimizations).
+
+3.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+
+3.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\busyctr'.
+Removed a total of 0 cells.
+
+3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \busyctr..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \busyctr.
+Performed a total of 0 changes.
+
+3.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\busyctr'.
+Removed a total of 0 cells.
+
+3.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+3.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+
+3.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+
+3.9. Finished OPT passes. (There is nothing left to do.)
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+
+5. Executing ASYNC2SYNC pass.
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+
+7. Executing SETUNDEF pass (replace undef values with defined constants).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module busyctr.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\busyctr'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \busyctr..
+
+8.5. Finished fast OPT passes.
+
+9. Executing CHECK pass (checking for obvious problems).
+checking module busyctr..
+found and reported 0 problems.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1. Analyzing design hierarchy..
+Top module:  \busyctr
+
+10.2. Analyzing design hierarchy..
+Top module:  \busyctr
+Removed 0 unused modules.
+Module busyctr directly or indirectly contains formal properties -> setting "keep" attribute.
+
+11. Executing ILANG backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 4dbaa0b919
+CPU: user 0.03s system 0.00s, MEM: 44.67 MB total, 9.64 MB resident
+Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
+Time spent: 25% 7x opt_clean (0 sec), 21% 7x opt_expr (0 sec), ...
