@@ -8,6 +8,10 @@
 - assume() are common for both cover/prove. assert() is used for prove only. cover() is used for cover only
 - Don't assume outputs, use it inside a if statement instead
 - The cover(), assume(), assert() statements compulsorily have to be in always block (event-controlled)
+- A failed cover will not generate a trace
+- Regarding initial assumes, there is a bug in the verific parser that yosys uses in Symbiotic Suite that stops this working. So as a work around you can use the same technique as f_past_valid
+
+DOUBT: ASK WHAT IS THE DIFFERENCE BETWEEN K-INDUCTION
 
 ## Binding Formal properties in a design
 
@@ -29,6 +33,7 @@ module ();
 endmodule
 
 ```
+
 ## sby
 
 - The -f option while invoking sbf will clean the result directory
@@ -39,21 +44,26 @@ Available options are:
 [tasks]
 cover
 prove
+#  When run with no arguments; sby will run all the tasks. To run just one, provide the name of the task as an argument to sby: sby -f busyctr.sby prove
 
 [options] #To be able to individually run
 prove: mode bmc
 cover: mode cover
 cover: depth <n> #Number of cycles
+cover: append <n> #Append n cycles to the cover
 
 [engines]
-smtbmc
+smtbmc yices # Can be any one also
 
 [script]
+read -verific # For assertion support ONLY
 read -formal busyctr.v # Yosys command
 prep -top busyctr # Top module
 opt -share_all
+cutpoint <module_name> # Cutpoint removes the nets after the cutpoint. Typically it's used to make a design smaller. It just makes things a bit faster#
+# Use time sby -f ...sby to time your runtime. Cutpoint helps in isolating modules that you maybe specifically interested in to reduce runtime
 
 [files]
-busyctr.v # In the paid version of sby, the formal property can be in a separate file
+busyctr.v # In the paid version of sby, the formal property can be in a separate file. Check the traffic_lights example
 
 ```

@@ -2,60 +2,28 @@
 ; yosys-smt2-module marlann_compute_mul2
 (declare-sort |marlann_compute_mul2_s| 0)
 (declare-fun |marlann_compute_mul2_is| (|marlann_compute_mul2_s|) Bool)
-; yosys-smt2-register r3B 16
-; yosys-smt2-wire r3B 16
-(declare-fun |marlann_compute_mul2#0| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \r3B
-(define-fun |marlann_compute_mul2_n r3B| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#0| state))
-; yosys-smt2-register r3A 16
-; yosys-smt2-wire r3A 16
-(declare-fun |marlann_compute_mul2#1| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \r3A
-(define-fun |marlann_compute_mul2_n r3A| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#1| state))
-; yosys-smt2-register r2B 16
-; yosys-smt2-wire r2B 16
-(declare-fun |marlann_compute_mul2#2| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \r2B
-(define-fun |marlann_compute_mul2_n r2B| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#2| state))
-; yosys-smt2-register r2A 16
-; yosys-smt2-wire r2A 16
-(declare-fun |marlann_compute_mul2#3| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \r2A
-(define-fun |marlann_compute_mul2_n r2A| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#3| state))
-; yosys-smt2-register r1B 16
-; yosys-smt2-wire r1B 16
-(declare-fun |marlann_compute_mul2#4| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \r1B
-(define-fun |marlann_compute_mul2_n r1B| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#4| state))
-; yosys-smt2-register r1A 16
-; yosys-smt2-wire r1A 16
-(declare-fun |marlann_compute_mul2#5| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \r1A
-(define-fun |marlann_compute_mul2_n r1A| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#5| state))
 ; yosys-smt2-input clock 1
 ; yosys-smt2-wire clock 1
-; yosys-smt2-clock clock posedge
-(declare-fun |marlann_compute_mul2#6| (|marlann_compute_mul2_s|) Bool) ; \clock
-(define-fun |marlann_compute_mul2_n clock| ((state |marlann_compute_mul2_s|)) Bool (|marlann_compute_mul2#6| state))
+(declare-fun |marlann_compute_mul2#0| (|marlann_compute_mul2_s|) Bool) ; \clock
+(define-fun |marlann_compute_mul2_n clock| ((state |marlann_compute_mul2_s|)) Bool (|marlann_compute_mul2#0| state))
 ; yosys-smt2-output X 32
 ; yosys-smt2-wire X 32
-(define-fun |marlann_compute_mul2_n X| ((state |marlann_compute_mul2_s|)) (_ BitVec 32) (concat (|marlann_compute_mul2#0| state) (|marlann_compute_mul2#1| state)))
+; yosys-smt2-anyseq marlann_compute_mul2#1 32 $auto$cutpoint.cc:70:execute$547
+(declare-fun |marlann_compute_mul2#1| (|marlann_compute_mul2_s|) (_ BitVec 32)) ; \X
+(define-fun |marlann_compute_mul2_n X| ((state |marlann_compute_mul2_s|)) (_ BitVec 32) (|marlann_compute_mul2#1| state))
 ; yosys-smt2-input B 16
 ; yosys-smt2-wire B 16
-(declare-fun |marlann_compute_mul2#7| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \B
-(define-fun |marlann_compute_mul2_n B| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#7| state))
+(declare-fun |marlann_compute_mul2#2| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \B
+(define-fun |marlann_compute_mul2_n B| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#2| state))
 ; yosys-smt2-input A 16
 ; yosys-smt2-wire A 16
-(declare-fun |marlann_compute_mul2#8| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \A
-(define-fun |marlann_compute_mul2_n A| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#8| state))
-(define-fun |marlann_compute_mul2#9| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (bvmul (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#8| state)) ((_ extract 7 0) (|marlann_compute_mul2#8| state)))))))))) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) (concat ((_ extract 7 7) (|marlann_compute_mul2#7| state)) ((_ extract 7 0) (|marlann_compute_mul2#7| state)))))))))))) ; $0\r1A[15:0]
-(define-fun |marlann_compute_mul2#10| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (bvmul (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#8| state)) ((_ extract 15 8) (|marlann_compute_mul2#8| state)))))))))) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) (concat ((_ extract 15 15) (|marlann_compute_mul2#7| state)) ((_ extract 15 8) (|marlann_compute_mul2#7| state)))))))))))) ; $0\r1B[15:0]
+(declare-fun |marlann_compute_mul2#3| (|marlann_compute_mul2_s|) (_ BitVec 16)) ; \A
+(define-fun |marlann_compute_mul2_n A| ((state |marlann_compute_mul2_s|)) (_ BitVec 16) (|marlann_compute_mul2#3| state))
 (define-fun |marlann_compute_mul2_a| ((state |marlann_compute_mul2_s|)) Bool true)
 (define-fun |marlann_compute_mul2_u| ((state |marlann_compute_mul2_s|)) Bool true)
 (define-fun |marlann_compute_mul2_i| ((state |marlann_compute_mul2_s|)) Bool true)
 (define-fun |marlann_compute_mul2_h| ((state |marlann_compute_mul2_s|)) Bool true)
-(define-fun |marlann_compute_mul2_t| ((state |marlann_compute_mul2_s|) (next_state |marlann_compute_mul2_s|)) Bool (and
-  (= (|marlann_compute_mul2#9| state) (|marlann_compute_mul2#5| next_state)) ; $procdff$463 \r1A
-  (= (|marlann_compute_mul2#10| state) (|marlann_compute_mul2#4| next_state)) ; $procdff$466 \r1B
-  (= (|marlann_compute_mul2#5| state) (|marlann_compute_mul2#3| next_state)) ; $procdff$464 \r2A
-  (= (|marlann_compute_mul2#4| state) (|marlann_compute_mul2#2| next_state)) ; $procdff$467 \r2B
-  (= (|marlann_compute_mul2#3| state) (|marlann_compute_mul2#1| next_state)) ; $procdff$465 \r3A
-  (= (|marlann_compute_mul2#2| state) (|marlann_compute_mul2#0| next_state)) ; $procdff$468 \r3B
-)) ; end of module marlann_compute_mul2
+(define-fun |marlann_compute_mul2_t| ((state |marlann_compute_mul2_s|) (next_state |marlann_compute_mul2_s|)) Bool true) ; end of module marlann_compute_mul2
 ; yosys-smt2-module marlann_compute
 (declare-sort |marlann_compute_s| 0)
 (declare-fun |marlann_compute_is| (|marlann_compute_s|) Bool)
@@ -403,7 +371,6 @@
 (define-fun |marlann_compute_n cmd_insn| ((state |marlann_compute_s|)) (_ BitVec 32) (concat (|marlann_compute#124| state) (concat (|marlann_compute#125| state) (|marlann_compute#123| state))))
 ; yosys-smt2-input clock 1
 ; yosys-smt2-wire clock 1
-; yosys-smt2-clock clock posedge
 (declare-fun |marlann_compute#126| (|marlann_compute_s|) Bool) ; \clock
 (define-fun |marlann_compute_n clock| ((state |marlann_compute_s|)) Bool (|marlann_compute#126| state))
 ; yosys-smt2-output busy 1
@@ -450,33 +417,33 @@
 ; yosys-smt2-wire CBP 9
 (declare-fun |marlann_compute#137| (|marlann_compute_s|) (_ BitVec 9)) ; \CBP
 (define-fun |marlann_compute_n CBP| ((state |marlann_compute_s|)) (_ BitVec 9) (|marlann_compute#137| state))
-; yosys-smt2-anyseq marlann_compute#138 1 $auto$setundef.cc:524:execute$589
-(declare-fun |marlann_compute#138| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$590
+; yosys-smt2-anyseq marlann_compute#138 1 $auto$setundef.cc:524:execute$591
+(declare-fun |marlann_compute#138| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$592
 (define-fun |marlann_compute#139| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|marlann_compute#120| state)) #b1) (ite (|marlann_compute#69| state) #b1 #b0) (|marlann_compute#138| state))) ; $0$formal$compute.v:190$1_CHECK[0:0]$34
 (define-fun |marlann_compute#140| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|marlann_compute#120| state)) #b1) #b1 #b0)) ; $0$formal$compute.v:190$1_EN[0:0]$35
 ; yosys-smt2-assume 0 compute.v:190
 (define-fun |marlann_compute_u 0| ((state |marlann_compute_s|)) Bool (or (= ((_ extract 0 0) (|marlann_compute#139| state)) #b1) (not (= ((_ extract 0 0) (|marlann_compute#140| state)) #b1)))) ; $assume$compute.v:190$229
-; yosys-smt2-anyseq marlann_compute#141 1 $auto$setundef.cc:524:execute$585
-(declare-fun |marlann_compute#141| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$586
+; yosys-smt2-anyseq marlann_compute#141 1 $auto$setundef.cc:524:execute$587
+(declare-fun |marlann_compute#141| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$588
 (define-fun |marlann_compute#142| ((state |marlann_compute_s|)) (_ BitVec 8) (bvnot (|marlann_compute#100| state))) ; $not$compute.v:202$47_Y
 (define-fun |marlann_compute#143| ((state |marlann_compute_s|)) Bool (distinct (|marlann_compute#142| state) #b00000000)) ; $reduce_bool$compute.v:202$48_Y
 (define-fun |marlann_compute#144| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#103| state) (ite (|marlann_compute#143| state) #b1 #b0) (|marlann_compute#141| state))) ; $procmux$428_Y
-; yosys-smt2-anyseq marlann_compute#145 1 $auto$setundef.cc:524:execute$587
-(declare-fun |marlann_compute#145| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$588
+; yosys-smt2-anyseq marlann_compute#145 1 $auto$setundef.cc:524:execute$589
+(declare-fun |marlann_compute#145| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$590
 (define-fun |marlann_compute#146| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#69| state) (|marlann_compute#145| state) (|marlann_compute#144| state))) ; $0$formal$compute.v:202$3_CHECK[0:0]$39
 (define-fun |marlann_compute#147| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#103| state) #b1 #b0)) ; $procmux$424_Y
 (define-fun |marlann_compute#148| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#69| state) #b0 (|marlann_compute#147| state))) ; $0$formal$compute.v:202$3_EN[0:0]$40
 ; yosys-smt2-assert 0 compute.v:202
 (define-fun |marlann_compute_a 0| ((state |marlann_compute_s|)) Bool (or (= ((_ extract 0 0) (|marlann_compute#146| state)) #b1) (not (= ((_ extract 0 0) (|marlann_compute#148| state)) #b1)))) ; $assert$compute.v:202$231
-; yosys-smt2-anyseq marlann_compute#149 1 $auto$setundef.cc:524:execute$581
-(declare-fun |marlann_compute#149| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$582
+; yosys-smt2-anyseq marlann_compute#149 1 $auto$setundef.cc:524:execute$583
+(declare-fun |marlann_compute#149| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$584
 (define-fun |marlann_compute#150| ((state |marlann_compute_s|)) Bool (not (or  (= ((_ extract 0 0) (|marlann_compute#101| state)) #b1) false))) ; $logic_not$compute.v:200$43_Y
 (define-fun |marlann_compute#151| ((state |marlann_compute_s|)) Bool (not (or  (= ((_ extract 0 0) (|marlann_compute#102| state)) #b1) false))) ; $logic_not$compute.v:200$44_Y
 (define-fun |marlann_compute#152| ((state |marlann_compute_s|)) Bool (and (or  (|marlann_compute#150| state) false) (or  (|marlann_compute#151| state) false))) ; $logic_and$compute.v:200$45_Y
 (define-fun |marlann_compute#153| ((state |marlann_compute_s|)) Bool (distinct (|marlann_compute#100| state) #b00000000)) ; $procmux$417_CMP
 (define-fun |marlann_compute#154| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#153| state) (ite (|marlann_compute#152| state) #b1 #b0) (|marlann_compute#149| state))) ; $procmux$420_Y
-; yosys-smt2-anyseq marlann_compute#155 1 $auto$setundef.cc:524:execute$583
-(declare-fun |marlann_compute#155| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$584
+; yosys-smt2-anyseq marlann_compute#155 1 $auto$setundef.cc:524:execute$585
+(declare-fun |marlann_compute#155| (|marlann_compute_s|) (_ BitVec 1)) ; $auto$rtlil.cc:2318:Anyseq$586
 (define-fun |marlann_compute#156| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#69| state) (|marlann_compute#155| state) (|marlann_compute#154| state))) ; $0$formal$compute.v:200$2_CHECK[0:0]$37
 (define-fun |marlann_compute#157| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#153| state) #b1 #b0)) ; $procmux$416_Y
 (define-fun |marlann_compute#158| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#69| state) #b0 (|marlann_compute#157| state))) ; $0$formal$compute.v:200$2_EN[0:0]$38
@@ -525,19 +492,19 @@
 (define-fun |marlann_compute#199| ((state |marlann_compute_s|)) Bool (or  (= ((_ extract 31 31) (|marlann_compute#128| state)) #b1) (= ((_ extract 30 30) (|marlann_compute#128| state)) #b1) (= ((_ extract 29 29) (|marlann_compute#128| state)) #b1) (= ((_ extract 28 28) (|marlann_compute#128| state)) #b1) (= ((_ extract 27 27) (|marlann_compute#128| state)) #b1) (= ((_ extract 26 26) (|marlann_compute#128| state)) #b1) (= ((_ extract 25 25) (|marlann_compute#128| state)) #b1) (= ((_ extract 24 24) (|marlann_compute#128| state)) #b1) (= ((_ extract 23 23) (|marlann_compute#128| state)) #b1) (= ((_ extract 22 22) (|marlann_compute#128| state)) #b1) (= ((_ extract 21 21) (|marlann_compute#128| state)) #b1) (= ((_ extract 20 20) (|marlann_compute#128| state)) #b1) (= ((_ extract 19 19) (|marlann_compute#128| state)) #b1) (= ((_ extract 18 18) (|marlann_compute#128| state)) #b1) (= ((_ extract 17 17) (|marlann_compute#128| state)) #b1) (= ((_ extract 16 16) (|marlann_compute#128| state)) #b1) (= ((_ extract 15 15) (|marlann_compute#128| state)) #b1) (= ((_ extract 14 14) (|marlann_compute#128| state)) #b1) (= ((_ extract 13 13) (|marlann_compute#128| state)) #b1) (= ((_ extract 12 12) (|marlann_compute#128| state)) #b1) (= ((_ extract 11 11) (|marlann_compute#128| state)) #b1) (= ((_ extract 10 10) (|marlann_compute#128| state)) #b1) (= ((_ extract 9 9) (|marlann_compute#128| state)) #b1) (= ((_ extract 8 8) (|marlann_compute#128| state)) #b1) (= ((_ extract 7 7) (|marlann_compute#128| state)) #b1))) ; $reduce_or$compute.v:516$197_Y
 (define-fun |marlann_compute#200| ((state |marlann_compute_s|)) Bool (= (ite (|marlann_compute#198| state) #b1 #b0) (ite (|marlann_compute#199| state) #b1 #b0))) ; $eq$compute.v:516$198_Y
 (define-fun |marlann_compute#201| ((state |marlann_compute_s|)) (_ BitVec 8) (ite (|marlann_compute#200| state) ((_ extract 7 0) (|marlann_compute#128| state)) (|marlann_compute#197| state))) ; $0\acc1_saturated[7:0]
-; yosys-smt2-anyseq marlann_compute#202 16 $auto$setundef.cc:524:execute$579
-(declare-fun |marlann_compute#202| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$580
-; yosys-smt2-anyseq marlann_compute#203 16 $auto$setundef.cc:524:execute$577
-(declare-fun |marlann_compute#203| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$578
+; yosys-smt2-anyseq marlann_compute#202 16 $auto$setundef.cc:524:execute$581
+(declare-fun |marlann_compute#202| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$582
+; yosys-smt2-anyseq marlann_compute#203 16 $auto$setundef.cc:524:execute$579
+(declare-fun |marlann_compute#203| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$580
 (define-fun |marlann_compute#204| ((state |marlann_compute_s|)) (_ BitVec 17) (bvadd ((_ extract 31 15) (|marlann_compute#39| state)) (|marlann_compute#134| state))) ; $add$compute.v:264$64_Y
 (define-fun |marlann_compute#205| ((state |marlann_compute_s|)) Bool (or  (|marlann_compute#53| state) (|marlann_compute#54| state) (|marlann_compute#55| state) (|marlann_compute#56| state) (|marlann_compute#57| state))) ; $procmux$386_CTRL
 (define-fun |marlann_compute#206| ((state |marlann_compute_s|)) Bool (or  (|marlann_compute#50| state) (|marlann_compute#51| state) (|marlann_compute#52| state))) ; $procmux$387_CTRL
 (define-fun |marlann_compute#207| ((state |marlann_compute_s|)) (_ BitVec 16) (ite (|marlann_compute#206| state) ((_ extract 31 16) (|marlann_compute#39| state)) (ite (|marlann_compute#205| state) ((_ extract 16 1) (|marlann_compute#204| state)) (|marlann_compute#203| state)))) ; $procmux$385_Y
 (define-fun |marlann_compute#208| ((state |marlann_compute_s|)) (_ BitVec 16) (ite (|marlann_compute#190| state) (|marlann_compute#207| state) (|marlann_compute#202| state))) ; $0\mem_rd0_addr[15:0]
-; yosys-smt2-anyseq marlann_compute#209 16 $auto$setundef.cc:524:execute$549
-(declare-fun |marlann_compute#209| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$550
-; yosys-smt2-anyseq marlann_compute#210 16 $auto$setundef.cc:524:execute$547
-(declare-fun |marlann_compute#210| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$548
+; yosys-smt2-anyseq marlann_compute#209 16 $auto$setundef.cc:524:execute$551
+(declare-fun |marlann_compute#209| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$552
+; yosys-smt2-anyseq marlann_compute#210 16 $auto$setundef.cc:524:execute$549
+(declare-fun |marlann_compute#210| (|marlann_compute_s|) (_ BitVec 16)) ; $auto$rtlil.cc:2318:Anyseq$550
 (define-fun |marlann_compute#211| ((state |marlann_compute_s|)) (_ BitVec 17) (bvadd ((_ extract 31 15) (|marlann_compute#27| state)) (|marlann_compute#136| state))) ; $add$compute.v:362$116_Y
 (define-fun |marlann_compute#212| ((state |marlann_compute_s|)) Bool (= ((_ extract 5 0) (|marlann_compute#27| state)) #b100010)) ; $procmux$298_CMP [5]
 (define-fun |marlann_compute#213| ((state |marlann_compute_s|)) Bool (= ((_ extract 5 0) (|marlann_compute#27| state)) #b100001)) ; $procmux$298_CMP [4]
@@ -682,17 +649,17 @@
 (define-fun |marlann_compute#344| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#190| state) #b1 #b0)) ; $0\s2_en[0:0]
 (define-fun |marlann_compute#345| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#205| state) #b1 #b0)) ; $procmux$395_Y
 (define-fun |marlann_compute#346| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#190| state) (|marlann_compute#345| state) #b0)) ; $0\s2_tick_simd[0:0]
-; yosys-smt2-anyseq marlann_compute#347 9 $auto$setundef.cc:524:execute$565
-(declare-fun |marlann_compute#347| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$566
-; yosys-smt2-anyseq marlann_compute#348 9 $auto$setundef.cc:524:execute$563
-(declare-fun |marlann_compute#348| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$564
+; yosys-smt2-anyseq marlann_compute#347 9 $auto$setundef.cc:524:execute$567
+(declare-fun |marlann_compute#347| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$568
+; yosys-smt2-anyseq marlann_compute#348 9 $auto$setundef.cc:524:execute$565
+(declare-fun |marlann_compute#348| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$566
 (define-fun |marlann_compute#349| ((state |marlann_compute_s|)) Bool (= ((_ extract 5 0) (|marlann_compute#27| state)) #b000101)) ; $procmux$335_CMP
 (define-fun |marlann_compute#350| ((state |marlann_compute_s|)) (_ BitVec 9) (ite (|marlann_compute#349| state) ((_ extract 14 6) (|marlann_compute#27| state)) (|marlann_compute#348| state))) ; $procmux$348_Y
 (define-fun |marlann_compute#351| ((state |marlann_compute_s|)) (_ BitVec 9) (ite (|marlann_compute#174| state) (|marlann_compute#350| state) (|marlann_compute#347| state))) ; $0$memwr$\coeff_mem$compute.v:346$5_ADDR[8:0]$89
-; yosys-smt2-anyseq marlann_compute#352 128 $auto$setundef.cc:524:execute$561
-(declare-fun |marlann_compute#352| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$562
-; yosys-smt2-anyseq marlann_compute#353 128 $auto$setundef.cc:524:execute$559
-(declare-fun |marlann_compute#353| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$560
+; yosys-smt2-anyseq marlann_compute#352 128 $auto$setundef.cc:524:execute$563
+(declare-fun |marlann_compute#352| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$564
+; yosys-smt2-anyseq marlann_compute#353 128 $auto$setundef.cc:524:execute$561
+(declare-fun |marlann_compute#353| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$562
 (define-fun |marlann_compute#354| ((state |marlann_compute_s|)) (_ BitVec 128) (ite (|marlann_compute#349| state) (concat #b0000000000000000000000000000000000000000000000000000000000000000 (|marlann_compute#98| state)) (|marlann_compute#353| state))) ; $procmux$341_Y
 (define-fun |marlann_compute#355| ((state |marlann_compute_s|)) (_ BitVec 128) (ite (|marlann_compute#174| state) (|marlann_compute#354| state) (|marlann_compute#352| state))) ; $0$memwr$\coeff_mem$compute.v:346$5_DATA[127:0]$90
 (define-fun |marlann_compute#356| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#349| state) #b1 #b0)) ; $auto$wreduce.cc:454:run$540 [63]
@@ -701,19 +668,19 @@
 (define-fun |marlann_compute_m:W0D coeff_mem| ((state |marlann_compute_s|)) (_ BitVec 128) (|marlann_compute#355| state)) ; $0$memwr$\coeff_mem$compute.v:346$5_DATA[127:0]$90
 (define-fun |marlann_compute_m:W0M coeff_mem| ((state |marlann_compute_s|)) (_ BitVec 128) (concat #b0000000000000000000000000000000000000000000000000000000000000000 (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (concat (|marlann_compute#357| state) (|marlann_compute#357| state)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) ; { 64'0000000000000000000000000000000000000000000000000000000000000000 $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] $0$memwr$\coeff_mem$compute.v:346$5_EN[127:0]$91 [63] }
 (define-fun |marlann_compute#286#1| ((state |marlann_compute_s|)) (Array (_ BitVec 9) (_ BitVec 128)) (store (|marlann_compute#286#0| state) (|marlann_compute_m:W0A coeff_mem| state) (bvor (bvand (|marlann_compute_m:W0D coeff_mem| state) (|marlann_compute_m:W0M coeff_mem| state)) (bvand (select (|marlann_compute#286#0| state) (|marlann_compute_m:W0A coeff_mem| state)) (bvnot (|marlann_compute_m:W0M coeff_mem| state)))))) ; coeff_mem
-; yosys-smt2-anyseq marlann_compute#358 9 $auto$setundef.cc:524:execute$575
-(declare-fun |marlann_compute#358| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$576
-; yosys-smt2-anyseq marlann_compute#359 9 $auto$setundef.cc:524:execute$573
-(declare-fun |marlann_compute#359| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$574
+; yosys-smt2-anyseq marlann_compute#358 9 $auto$setundef.cc:524:execute$577
+(declare-fun |marlann_compute#358| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$578
+; yosys-smt2-anyseq marlann_compute#359 9 $auto$setundef.cc:524:execute$575
+(declare-fun |marlann_compute#359| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$576
 (define-fun |marlann_compute#360| ((state |marlann_compute_s|)) Bool (= ((_ extract 5 0) (|marlann_compute#27| state)) #b000110)) ; $procmux$355_CMP
 (define-fun |marlann_compute#361| ((state |marlann_compute_s|)) (_ BitVec 9) (ite (|marlann_compute#360| state) ((_ extract 14 6) (|marlann_compute#27| state)) (|marlann_compute#359| state))) ; $procmux$366_Y
 (define-fun |marlann_compute#362| ((state |marlann_compute_s|)) (_ BitVec 9) (ite (|marlann_compute#174| state) (|marlann_compute#361| state) (|marlann_compute#358| state))) ; $0$memwr$\coeff_mem$compute.v:351$6_ADDR[8:0]$92
-; yosys-smt2-anyseq marlann_compute#363 128 $auto$setundef.cc:524:execute$571
-(declare-fun |marlann_compute#363| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$572
-; yosys-smt2-anyseq marlann_compute#364 128 $auto$setundef.cc:524:execute$567
-(declare-fun |marlann_compute#364| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$568
-; yosys-smt2-anyseq marlann_compute#365 64 $auto$setundef.cc:524:execute$569
-(declare-fun |marlann_compute#365| (|marlann_compute_s|) (_ BitVec 64)) ; $auto$rtlil.cc:2318:Anyseq$570
+; yosys-smt2-anyseq marlann_compute#363 128 $auto$setundef.cc:524:execute$573
+(declare-fun |marlann_compute#363| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$574
+; yosys-smt2-anyseq marlann_compute#364 128 $auto$setundef.cc:524:execute$569
+(declare-fun |marlann_compute#364| (|marlann_compute_s|) (_ BitVec 128)) ; $auto$rtlil.cc:2318:Anyseq$570
+; yosys-smt2-anyseq marlann_compute#365 64 $auto$setundef.cc:524:execute$571
+(declare-fun |marlann_compute#365| (|marlann_compute_s|) (_ BitVec 64)) ; $auto$rtlil.cc:2318:Anyseq$572
 (define-fun |marlann_compute#366| ((state |marlann_compute_s|)) (_ BitVec 128) (ite (|marlann_compute#360| state) (concat (|marlann_compute#98| state) (|marlann_compute#365| state)) (|marlann_compute#364| state))) ; $procmux$360_Y
 (define-fun |marlann_compute#367| ((state |marlann_compute_s|)) (_ BitVec 128) (ite (|marlann_compute#174| state) (|marlann_compute#366| state) (|marlann_compute#363| state))) ; $0$memwr$\coeff_mem$compute.v:351$6_DATA[127:0]$93
 (define-fun |marlann_compute#368| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#360| state) #b1 #b0)) ; $procmux$354_Y [127]
@@ -722,17 +689,17 @@
 (define-fun |marlann_compute_m:W1D coeff_mem| ((state |marlann_compute_s|)) (_ BitVec 128) (|marlann_compute#367| state)) ; $0$memwr$\coeff_mem$compute.v:351$6_DATA[127:0]$93
 (define-fun |marlann_compute_m:W1M coeff_mem| ((state |marlann_compute_s|)) (_ BitVec 128) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) (concat (|marlann_compute#369| state) #b0000000000000000000000000000000000000000000000000000000000000000))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))) ; { $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] $0$memwr$\coeff_mem$compute.v:351$6_EN[127:0]$94 [127] 64'0000000000000000000000000000000000000000000000000000000000000000 }
 (define-fun |marlann_compute#286#2| ((state |marlann_compute_s|)) (Array (_ BitVec 9) (_ BitVec 128)) (store (|marlann_compute#286#1| state) (|marlann_compute_m:W1A coeff_mem| state) (bvor (bvand (|marlann_compute_m:W1D coeff_mem| state) (|marlann_compute_m:W1M coeff_mem| state)) (bvand (select (|marlann_compute#286#1| state) (|marlann_compute_m:W1A coeff_mem| state)) (bvnot (|marlann_compute_m:W1M coeff_mem| state)))))) ; coeff_mem
-; yosys-smt2-anyseq marlann_compute#370 9 $auto$setundef.cc:524:execute$557
-(declare-fun |marlann_compute#370| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$558
-; yosys-smt2-anyseq marlann_compute#371 9 $auto$setundef.cc:524:execute$555
-(declare-fun |marlann_compute#371| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$556
+; yosys-smt2-anyseq marlann_compute#370 9 $auto$setundef.cc:524:execute$559
+(declare-fun |marlann_compute#370| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$560
+; yosys-smt2-anyseq marlann_compute#371 9 $auto$setundef.cc:524:execute$557
+(declare-fun |marlann_compute#371| (|marlann_compute_s|) (_ BitVec 9)) ; $auto$rtlil.cc:2318:Anyseq$558
 (define-fun |marlann_compute#372| ((state |marlann_compute_s|)) Bool (= ((_ extract 5 0) (|marlann_compute#27| state)) #b000100)) ; $procmux$312_CMP
 (define-fun |marlann_compute#373| ((state |marlann_compute_s|)) (_ BitVec 9) (ite (|marlann_compute#372| state) ((_ extract 14 6) (|marlann_compute#27| state)) (|marlann_compute#371| state))) ; $procmux$327_Y
 (define-fun |marlann_compute#374| ((state |marlann_compute_s|)) (_ BitVec 9) (ite (|marlann_compute#174| state) (|marlann_compute#373| state) (|marlann_compute#370| state))) ; $0$memwr$\code_mem$compute.v:341$4_ADDR[8:0]$86
-; yosys-smt2-anyseq marlann_compute#375 32 $auto$setundef.cc:524:execute$553
-(declare-fun |marlann_compute#375| (|marlann_compute_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2318:Anyseq$554
-; yosys-smt2-anyseq marlann_compute#376 32 $auto$setundef.cc:524:execute$551
-(declare-fun |marlann_compute#376| (|marlann_compute_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2318:Anyseq$552
+; yosys-smt2-anyseq marlann_compute#375 32 $auto$setundef.cc:524:execute$555
+(declare-fun |marlann_compute#375| (|marlann_compute_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2318:Anyseq$556
+; yosys-smt2-anyseq marlann_compute#376 32 $auto$setundef.cc:524:execute$553
+(declare-fun |marlann_compute#376| (|marlann_compute_s|) (_ BitVec 32)) ; $auto$rtlil.cc:2318:Anyseq$554
 (define-fun |marlann_compute#377| ((state |marlann_compute_s|)) (_ BitVec 32) (ite (|marlann_compute#372| state) ((_ extract 31 0) (|marlann_compute#98| state)) (|marlann_compute#376| state))) ; $procmux$319_Y
 (define-fun |marlann_compute#378| ((state |marlann_compute_s|)) (_ BitVec 32) (ite (|marlann_compute#174| state) (|marlann_compute#377| state) (|marlann_compute#375| state))) ; $0$memwr$\code_mem$compute.v:341$4_DATA[31:0]$87
 (define-fun |marlann_compute#379| ((state |marlann_compute_s|)) (_ BitVec 1) (ite (|marlann_compute#372| state) #b1 #b0)) ; $procmux$311_Y [31]

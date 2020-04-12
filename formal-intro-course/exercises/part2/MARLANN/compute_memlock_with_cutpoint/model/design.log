@@ -722,58 +722,63 @@ checking module marlann_compute..
 checking module marlann_compute_mul2..
 found and reported 0 problems.
 
-3. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
+3. Executing CUTPOINT pass.
+Making all outputs of module marlann_compute_mul2 cut points, removing module contents.
 
-4. Executing ASYNC2SYNC pass.
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from $mem).
 
-5. Executing OPT_CLEAN pass (remove unused cells and wires).
+5. Executing ASYNC2SYNC pass.
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \marlann_compute..
 Finding unused cells or wires in module \marlann_compute_mul2..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~7 debug messages>
 
-6. Executing SETUNDEF pass (replace undef values with defined constants).
+7. Executing SETUNDEF pass (replace undef values with defined constants).
 
-7. Executing OPT pass (performing simple optimizations).
+8. Executing OPT pass (performing simple optimizations).
 
-7.1. Executing OPT_EXPR pass (perform const folding).
+8.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module marlann_compute.
 Optimizing module marlann_compute_mul2.
 
-7.2. Executing OPT_MERGE pass (detect identical cells).
+8.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\marlann_compute'.
 Finding identical cells in module `\marlann_compute_mul2'.
 Removed a total of 0 cells.
 
-7.3. Executing OPT_RMDFF pass (remove dff with constant values).
+8.3. Executing OPT_RMDFF pass (remove dff with constant values).
 
-7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \marlann_compute..
 Finding unused cells or wires in module \marlann_compute_mul2..
 Removed 2 unused cells and 2 unused wires.
 <suppressed ~3 debug messages>
 
-7.5. Finished fast OPT passes.
+8.5. Finished fast OPT passes.
 
-8. Executing CHECK pass (checking for obvious problems).
+9. Executing CHECK pass (checking for obvious problems).
 checking module marlann_compute..
 checking module marlann_compute_mul2..
 found and reported 0 problems.
 
-9. Executing HIERARCHY pass (managing design hierarchy).
+10. Executing HIERARCHY pass (managing design hierarchy).
 
-9.1. Analyzing design hierarchy..
+10.1. Analyzing design hierarchy..
 Top module:  \marlann_compute
 Used module:     \marlann_compute_mul2
 
-9.2. Analyzing design hierarchy..
+10.2. Analyzing design hierarchy..
 Top module:  \marlann_compute
 Used module:     \marlann_compute_mul2
 Removed 0 unused modules.
 Module marlann_compute directly or indirectly contains formal properties -> setting "keep" attribute.
 
-10. Executing ILANG backend.
+11. Executing ILANG backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: dc8ea3c369
-CPU: user 0.44s system 0.00s, MEM: 51.89 MB total, 17.29 MB resident
+End of script. Logfile hash: 61929c259a
+CPU: user 0.44s system 0.01s, MEM: 51.93 MB total, 17.40 MB resident
 Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
 Time spent: 28% 7x opt_clean (0 sec), 22% 3x check (0 sec), ...

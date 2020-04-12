@@ -22,6 +22,16 @@ The relevant signals are:
 Write your assertion at line 198
 
 Take a look at the .sby file. What do you think the cutpoint line does?
+- Reduces rutnime by specifying specific modules of interest
+Without Cutpoints:
+real    0m3.249s
+user    0m2.377s
+sys    0m0.061s
+
+With Cutpoint:
+real    0m1.696s
+user    0m2.281s
+sys    0m0.079s
 
 ## Prove busy counter example works as expected
 
@@ -54,8 +64,7 @@ Now we want to prove that each interaction will eventually provide the desired b
 
 ### Method
 
-Open the liveness.sv file. We already have one property that uses SVA to prove that after
-the pedestrian button is pressed, the pedestrian light will go green.
+Open the liveness.sv file. We already have one property that uses SVA to prove that after the pedestrian button is pressed, the pedestrian light will go green.
 
 	liveness_pedestrian: assert property (
 		pedestrian_button |-> ##[0:25] pedestrian_green

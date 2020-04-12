@@ -31,16 +31,15 @@ Input filename: design.il
 
 === marlann_compute_mul2 ===
 
-   Number of wires:                 12
-   Number of wire bits:            193
-   Number of public wires:          10
-   Number of public wire bits:     161
+   Number of wires:                  4
+   Number of wire bits:             65
+   Number of public wires:           4
+   Number of public wire bits:      65
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                  8
-     $dff                            6
-     $mul                            2
+   Number of cells:                  1
+     $anyseq                         1
 
 === marlann_compute ===
 
@@ -80,27 +79,26 @@ Input filename: design.il
    marlann_compute                   1
      marlann_compute_mul2            8
 
-   Number of wires:                439
-   Number of wire bits:           7525
-   Number of public wires:         167
-   Number of public wire bits:    3265
+   Number of wires:                375
+   Number of wire bits:           6501
+   Number of public wires:         119
+   Number of public wire bits:    2497
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                431
+   Number of cells:                375
      $add                           26
      $and                            7
-     $anyseq                        22
+     $anyseq                        30
      $assert                         2
      $assume                         1
-     $dff                           97
+     $dff                           49
      $eq                            57
      $gt                             9
      $logic_and                     15
      $logic_not                     12
      $logic_or                      14
      $mem                            2
-     $mul                           16
      $mux                          115
      $ne                             1
      $not                            1
@@ -115,7 +113,7 @@ Input filename: design.il
 Creating SMT-LIBv2 representation of module marlann_compute_mul2.
 Creating SMT-LIBv2 representation of module marlann_compute.
 
-End of script. Logfile hash: eca0363d24
-CPU: user 0.04s system 0.00s, MEM: 47.22 MB total, 10.17 MB resident
+End of script. Logfile hash: d9175767d5
+CPU: user 0.04s system 0.00s, MEM: 47.22 MB total, 10.07 MB resident
 Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 59% 2x write_smt2 (0 sec), 40% 2x read_ilang (0 sec), ...
+Time spent: 56% 2x write_smt2 (0 sec), 42% 2x read_ilang (0 sec), ...

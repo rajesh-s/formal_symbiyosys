@@ -774,6 +774,6 @@ Module marlann_compute directly or indirectly contains formal properties -> sett
 Output filename: ../model/design.il
 
 End of script. Logfile hash: dc8ea3c369
-CPU: user 0.44s system 0.00s, MEM: 51.89 MB total, 17.29 MB resident
+CPU: user 0.45s system 0.00s, MEM: 51.89 MB total, 17.32 MB resident
 Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
 Time spent: 28% 7x opt_clean (0 sec), 22% 3x check (0 sec), ...

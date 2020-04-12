@@ -116,6 +116,6 @@ Creating SMT-LIBv2 representation of module marlann_compute_mul2.
 Creating SMT-LIBv2 representation of module marlann_compute.
 
 End of script. Logfile hash: eca0363d24
-CPU: user 0.04s system 0.00s, MEM: 47.22 MB total, 10.17 MB resident
+CPU: user 0.03s system 0.00s, MEM: 47.22 MB total, 10.16 MB resident
 Yosys 0.9+932 (git sha1 4072a966, clang 6.0.0-1ubuntu2 -fPIC -Os)
-Time spent: 59% 2x write_smt2 (0 sec), 40% 2x read_ilang (0 sec), ...
+Time spent: 57% 2x write_smt2 (0 sec), 42% 2x read_ilang (0 sec), ...
