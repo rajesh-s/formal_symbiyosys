@@ -1,0 +1,16 @@
+SBY 21:15:47 [busyctr_cover] Removing direcory 'busyctr_cover'.
+SBY 21:15:47 [busyctr_cover] Copy 'busyctr.v' to 'busyctr_cover/src/busyctr.v'.
+SBY 21:15:47 [busyctr_cover] engine_0: smtbmc
+SBY 21:15:47 [busyctr_cover] base: starting process "cd busyctr_cover/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 21:15:54 [busyctr_cover] base: finished (returncode=0)
+SBY 21:15:54 [busyctr_cover] smt2: starting process "cd busyctr_cover/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 21:15:59 [busyctr_cover] smt2: finished (returncode=0)
+SBY 21:15:59 [busyctr_cover] engine_0: starting process "cd busyctr_cover; yosys-smtbmc --presat --unroll -c --noprogress -t 20 --append 0 --dump-vcd engine_0/trace%.vcd --dump-vlogtb engine_0/trace%_tb.v --dump-smtc engine_0/trace%.smtc model/design_smt2.smt2"
+SBY 21:16:00 [busyctr_cover] engine_0: ##   0:00:00  Solver: yices
+SBY 21:16:02 [busyctr_cover] engine_0: ##   0:00:01  Status: passed
+SBY 21:16:02 [busyctr_cover] engine_0: finished (returncode=0)
+SBY 21:16:02 [busyctr_cover] engine_0: Status returned by engine: pass
+SBY 21:16:02 [busyctr_cover] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:15 (15)
+SBY 21:16:02 [busyctr_cover] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 21:16:02 [busyctr_cover] summary: engine_0 (smtbmc) returned pass
+SBY 21:16:02 [busyctr_cover] DONE (PASS, rc=0)

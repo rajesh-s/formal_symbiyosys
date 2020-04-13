@@ -10,8 +10,13 @@
 - The cover(), assume(), assert() statements compulsorily have to be in always block (event-controlled)
 - A failed cover will not generate a trace
 - Regarding initial assumes, there is a bug in the verific parser that yosys uses in Symbiotic Suite that stops this working. So as a work around you can use the same technique as f_past_valid
+- When we have a clocked assertion, the fail tenwill be on the last but one edge
+- Use abstraction (i.e anyseq/anyconst) to cover large designs allowing the formal tool to make assumptions
+- The [engines](https://symbiyosys.readthedocs.io/en/latest/reference.html#engines-section) section configures which engines should be used to solve the given problem. Each line in the [engines] section specifies one engine. When more than one engine is specified then the result returned by the first engine to finish is used.
 
-DOUBT: ASK WHAT IS THE DIFFERENCE BETWEEN K-INDUCTION
+## Formal Workflow
+
+![Formal](images/2020-04-13-22-15-15.png)
 
 ## Binding Formal properties in a design
 
@@ -47,7 +52,7 @@ prove
 #  When run with no arguments; sby will run all the tasks. To run just one, provide the name of the task as an argument to sby: sby -f busyctr.sby prove
 
 [options] #To be able to individually run
-prove: mode bmc
+prove: mode bmc #  bmc is only bounded make it to prove for full proof
 cover: mode cover
 cover: depth <n> #Number of cycles
 cover: append <n> #Append n cycles to the cover

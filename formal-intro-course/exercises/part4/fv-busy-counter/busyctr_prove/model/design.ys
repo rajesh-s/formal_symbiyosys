@@ -1,0 +1,15 @@
+# running in busyctr_prove/src/
+read -formal busyctr.v
+prep -top busyctr
+opt -share_all
+
+memory_nordff
+async2sync
+chformal -assume -early
+chformal -live -fair -cover -remove
+opt_clean
+setundef -anyseq
+opt -keepdc -fast
+check
+hierarchy -simcheck
+write_ilang ../model/design.il

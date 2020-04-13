@@ -16,5 +16,9 @@ module double_shift_reg(i_clk, i_ce, i_data, o_data);
 
     `ifdef FORMAL
         // your properties here
+      always @(posedge i_clk) begin
+        assert(!o_data);
+        assume(a.sreg == b.sreg);
+      end
     `endif
 endmodule

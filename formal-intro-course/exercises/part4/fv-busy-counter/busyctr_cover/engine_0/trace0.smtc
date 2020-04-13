@@ -1,0 +1,47 @@
+initial
+assume (= [$formal$busyctr.v:46$6_CHECK] false)
+assume (= [$formal$busyctr.v:46$6_EN] false)
+assume (= [$formal$busyctr.v:49$7_CHECK] false)
+assume (= [$formal$busyctr.v:49$7_EN] false)
+assume (= [$formal$busyctr.v:54$8_CHECK] false)
+assume (= [$formal$busyctr.v:54$8_EN] false)
+assume (= [$past$busyctr.v:36$1$0] false)
+assume (= [$past$busyctr.v:49$2$0] #b0000000000000000)
+assume (= [$past$busyctr.v:54$3$0] false)
+assume (= [counter] #b0000000000000000)
+assume (= [f_past_valid] false)
+
+state 0
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] true)
+
+state 1
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] true)
+
+state 2
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] true)
+
+state 3
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] true)
+
+state 4
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] true)
+
+state 5
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] false)
+
+state 6
+assume (= [i_clk] false)
+assume (= [i_reset] false)
+assume (= [i_start_signal] false)
