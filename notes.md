@@ -27,7 +27,7 @@ module ();
     `ifdef FORMAL
         reg f_past_valid = 0;
 
-        // assume startup in reset
+        // this is required when $past is used in cover/assert because $past is undefined on the first clock
         always @(posedge clk) begin
             f_past_valid <= 1;
             if(f_past_valid == 0)
